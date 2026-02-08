@@ -193,6 +193,8 @@
             z-index: 1000;
             transition: var(--transition);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            /* ИЗМЕНЕНИЕ 6: уменьшаем высоту хедера на треть */
+            padding: 0;
         }
 
         .header-bg {
@@ -207,7 +209,7 @@
         }
 
         header.scrolled {
-            padding: 5px 0;
+            padding: 0;
             background: var(--secondary-color);
         }
 
@@ -215,13 +217,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0; /* Уменьшили padding для более тонкого хедера */
             position: relative;
         }
 
         .logo {
             font-family: 'Gravitas One', cursive;
-            font-size: 2.2rem;
+            font-size: 2rem; /* Немного уменьшили логотип */
             font-weight: 600;
             color: var(--light-color);
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -473,6 +475,7 @@
         }
 
         /* ============= SECTION STYLING ============= */
+        /* ИЗМЕНЕНИЕ 3: уменьшаем разрыв между всеми блоками наполовину на мобильных */
         section {
             padding: 120px 0;
             opacity: 0;
@@ -525,6 +528,7 @@
             min-width: 300px;
         }
 
+        /* ИЗМЕНЕНИЕ 2: уменьшаем шрифт параграфов на 15% на мобильных */
         .story-text p {
             margin-bottom: 25px;
             font-size: 1.2rem;
@@ -933,12 +937,13 @@
             background: linear-gradient(135deg, rgba(255, 239, 213, 0.3), rgba(255, 239, 213, 0.1));
         }
 
+        /* ИЗМЕНЕНИЕ 4: Убрали отступ для subtitle */
         .rsvp-subtitle {
             text-align: center;
             color: var(--accent-color);
             font-size: 1.2rem;
-            margin-top: -30px;
-            margin-bottom: 50px;
+            margin-top: 0; /* Убрали отрицательный отступ */
+            margin-bottom: 30px; /* Уменьшили отступ снизу */
             font-weight: 300;
         }
 
@@ -1091,6 +1096,7 @@
             transition: transform 0.3s ease;
         }
 
+        /* ИЗМЕНЕНИЕ 5: убираем курсив с подсказки в мобильной версии */
         .rsvp-step-hint {
             margin-top: 25px;
             color: #888;
@@ -2403,7 +2409,7 @@
             
             nav {
                 position: fixed;
-                top: 80px;
+                top: 70px; /* Уменьшили чтобы соответствовать новому хедеру */
                 left: 0;
                 width: 100%;
                 background-color: var(--secondary-color);
@@ -2454,17 +2460,25 @@
                 );
             }
             
+            /* ИЗМЕНЕНИЕ 1: уменьшить квадраты с количеством времени в полтора раза */
             .countdown {
                 flex-wrap: wrap;
+                margin-top: 30px;
+                gap: 15px;
             }
             
             .countdown-item {
-                min-width: 70px;
-                padding: 10px 15px;
+                min-width: 60px !important; /* Уменьшили в полтора раза */
+                padding: 10px 12px !important; /* Уменьшили отступы */
+                border-radius: 8px;
             }
             
             .countdown-number {
-                font-size: 1.8rem;
+                font-size: 1.5rem !important; /* Уменьшили шрифт чисел */
+            }
+            
+            .countdown-label {
+                font-size: 0.7rem !important; /* Уменьшили шрифт подписей */
             }
             
             .section-title h2 {
@@ -2474,6 +2488,11 @@
             /* Story секция */
             .story-images {
                 grid-template-columns: 1fr;
+            }
+            
+            /* ИЗМЕНЕНИЕ 2: уменьшаем шрифт параграфов на 15% */
+            .story-text p {
+                font-size: 1.02rem; /* 1.2rem * 0.85 = 1.02rem */
             }
             
             /* Дресс-код секция */
@@ -2497,7 +2516,7 @@
             
             /* Галерея */
             #gallery {
-                padding: 80px 0;
+                padding: 60px 0; /* Уменьшили padding наполовину */
             }
             
             .gallery-header h2 {
@@ -2510,6 +2529,7 @@
             
             .video-gallery-wrapper {
                 height: 350px;
+                margin-bottom: 40px; /* Уменьшили отступ */
             }
             
             .video-info {
@@ -2574,6 +2594,11 @@
                 width: 100%;
             }
             
+            /* ИЗМЕНЕНИЕ 5: убираем курсив с текста в мобильной версии */
+            .rsvp-step-hint {
+                font-style: normal !important;
+            }
+            
             /* Контакты */
             .contacts-container {
                 gap: 30px;
@@ -2596,6 +2621,7 @@
             /* Карта */
             .map-container {
                 height: 350px;
+                margin-top: 30px; /* Уменьшили отступ */
             }
         }
 
@@ -2608,22 +2634,42 @@
                 font-size: 1.7rem;
             }
             
+            /* ИЗМЕНЕНИЕ 1: еще сильнее уменьшаем квадраты на очень маленьких экранах */
             .countdown-item {
-                min-width: 60px;
-                padding: 8px 10px;
+                min-width: 50px !important;
+                padding: 8px 10px !important;
             }
             
             .countdown-number {
-                font-size: 1.5rem;
+                font-size: 1.3rem !important;
+            }
+            
+            .countdown-label {
+                font-size: 0.6rem !important;
             }
             
             .section-title h2 {
                 font-size: 2rem;
             }
             
+            /* ИЗМЕНЕНИЕ 3: уменьшаем разрыв между всеми блоками наполовину */
+            section {
+                padding: 60px 0 !important; /* Уменьшили padding наполовину */
+            }
+            
+            .section-title {
+                margin-bottom: 40px !important; /* Уменьшили отступ наполовину */
+            }
+            
+            /* Story секция */
+            .story-content {
+                gap: 30px; /* Уменьшили gap наполовину */
+            }
+            
             /* Дресс-код секция */
             .dresscode-content {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
             
             .dresscode-card {
@@ -2678,11 +2724,22 @@
             
             .rsvp-form-instructions {
                 grid-template-columns: 1fr;
+                gap: 15px; /* Уменьшили gap */
+                margin-bottom: 30px; /* Уменьшили отступ */
+            }
+            
+            .rsvp-deadline-banner {
+                margin-top: 30px; /* Уменьшили отступ */
+                padding: 20px; /* Уменьшили padding */
             }
             
             /* Карточки */
             .detail-card {
                 padding: 30px 20px;
+            }
+            
+            .details-container {
+                gap: 20px; /* Уменьшили gap */
             }
             
             /* Музыкальный плеер */
@@ -2695,6 +2752,34 @@
             /* Карта */
             .map-container {
                 height: 300px;
+                margin-top: 30px; /* Уменьшили отступ */
+            }
+            
+            /* FAQ */
+            .faq-container {
+                margin-top: 30px; /* Уменьшили отступ */
+            }
+            
+            .faq-item {
+                margin-bottom: 15px; /* Уменьшили отступ */
+            }
+            
+            .faq-question {
+                padding: 20px; /* Уменьшили padding */
+            }
+            
+            /* Footer */
+            footer {
+                padding: 30px 0 20px; /* Уменьшили padding наполовину */
+            }
+            
+            .footer-content {
+                margin-bottom: 20px; /* Уменьшили отступ */
+            }
+            
+            .footer-bottom {
+                padding-top: 15px; /* Уменьшили padding */
+                margin-top: 15px; /* Уменьшили отступ */
             }
         }
     </style>
@@ -2909,6 +2994,25 @@
                             <div class="color-circle" style="background-color: #BEC88F;"></div>
                             <h4>Оливковый</h4>
                             <p>#BEC88F<br>Приглушенный зеленый</p>
+                        </div>
+
+                        <!-- ИЗМЕНЕНИЕ 7: добавляем 3 новых цвета -->
+                        <div class="dresscode-item">
+                            <div class="color-circle" style="background-color: #E9967A;"></div>
+                            <h4>Dark Salmon</h4>
+                            <p>#E9967A<br>Темный лососевый</p>
+                        </div>
+                        
+                        <div class="dresscode-item">
+                            <div class="color-circle" style="background-color: #B48A72;"></div>
+                            <h4>B48A72</h4>
+                            <p>#B48A72<br>Теплый коричнево-бежевый</p>
+                        </div>
+                        
+                        <div class="dresscode-item">
+                            <div class="color-circle" style="background-color: #76513F;"></div>
+                            <h4>76513F</h4>
+                            <p>#76513F<br>Насыщенный коричневый</p>
                         </div>
                     </div>
                     
