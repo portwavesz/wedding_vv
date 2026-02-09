@@ -536,12 +536,58 @@
             text-align: justify;
         }
 
+        /* ИЗМЕНЕНИЕ 1: диагональное расположение фото на мобильных */
         .story-images {
             flex: 1;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             min-width: 300px;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .story-images {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 30px;
+            }
+            
+            .story-image {
+                width: 85%;
+                height: 200px;
+                margin-bottom: -30px;
+                position: relative;
+                z-index: 1;
+            }
+            
+            .story-image:nth-child(odd) {
+                align-self: flex-end;
+                transform: translateX(-10px);
+            }
+            
+            .story-image:nth-child(even) {
+                align-self: flex-start;
+                transform: translateX(10px);
+            }
+            
+            .story-image:first-child {
+                margin-top: 0;
+                transform: translateX(15px);
+            }
+            
+            .story-image:nth-child(2) {
+                transform: translateX(-15px);
+            }
+            
+            .story-image:nth-child(3) {
+                transform: translateX(15px);
+            }
+            
+            .story-image:nth-child(4) {
+                transform: translateX(-15px);
+            }
         }
 
         .story-image {
@@ -837,15 +883,17 @@
             line-height: 1.4;
         }
 
+        /* ИЗМЕНЕНИЕ 2: палитра цветов в один ряд */
         .dresscode-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 25px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
             margin-bottom: 30px;
         }
 
         .dresscode-item {
-            padding: 15px 10px;
+            padding: 10px;
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
@@ -853,6 +901,26 @@
             text-align: center;
             position: relative;
             overflow: visible;
+        }
+
+        @media (max-width: 768px) {
+            .dresscode-content {
+                gap: 12px;
+            }
+            
+            .dresscode-item {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .dresscode-content {
+                gap: 10px;
+            }
+            
+            .dresscode-item {
+                padding: 6px;
+            }
         }
 
         .dresscode-item:hover {
@@ -865,50 +933,52 @@
         }
 
         .color-circle {
-            width: 100px;
-            height: 100px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            margin-bottom: 20px;
-            border: 5px solid white;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .color-circle:after {
             content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
             background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
             border-radius: 50%;
         }
 
         .dresscode-item h4 {
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            font-family: 'Gravitas One', cursive;
-            font-size: 1.3rem;
-            min-height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: none; /* Скрываем названия цветов */
         }
 
         .dresscode-item p {
-            color: var(--text-color);
-            font-size: 1rem;
-            line-height: 1.5;
-            margin: 0;
+            display: none; /* Скрываем HEX коды */
         }
 
-        .dresscode-item p br {
-            display: block;
-            margin: 5px 0;
-            content: "";
+        /* Добавляем всплывающую подсказку при наведении */
+        .color-circle:hover::before {
+            content: attr(data-color);
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            z-index: 10;
+            pointer-events: none;
         }
 
         .dresscode-note {
@@ -925,6 +995,7 @@
             font-size: 1rem;
             line-height: 1.5;
             margin: 0;
+            display: block;
         }
 
         .dresscode-note i {
@@ -2967,50 +3038,50 @@
                     
                     <div class="dresscode-content">
                         <div class="dresscode-item">
-                            <div class="color-circle" style="background-color: #f9e3e5;"></div>
+                            <div class="color-circle" style="background-color: #f9e3e5;" data-color="#F9E3E5"></div>
                             <h4>Нежно-розовый</h4>
                             <p>#F9E3E5<br>Теплый пастельный оттенок</p>
                         </div>
                         
                         <div class="dresscode-item">
-                            <div class="color-circle" style="background-color: #FC968A;"></div>
+                            <div class="color-circle" style="background-color: #FC968A;" data-color="#FC968A"></div>
                             <h4>Коралловый</h4>
                             <p>#FC968A<br>Яркий и жизнерадостный</p>
                         </div>
                         
                         <div class="dresscode-item">
-                            <div class="color-circle" style="background-color: #F2B07E;"></div>
+                            <div class="color-circle" style="background-color: #F2B07E;" data-color="#F2B07E"></div>
                             <h4>Персиковый</h4>
                             <p>#F2B07E<br>Мягкий теплый тон</p>
                         </div>
                         
                         <div class="dresscode-item">
-                            <div class="color-circle" style="background-color: #F6E4A4;"></div>
+                            <div class="color-circle" style="background-color: #F6E4A4;" data-color="#F6E4A4"></div>
                             <h4>Ванильный</h4>
                             <p>#F6E4A4<br>Светлый кремовый оттенок</p>
                         </div>
                         
                         <div class="dresscode-item">
-                            <div class="color-circle" style="background-color: #BEC88F;"></div>
+                            <div class="color-circle" style="background-color: #BEC88F;" data-color="#BEC88F"></div>
                             <h4>Оливковый</h4>
                             <p>#BEC88F<br>Приглушенный зеленый</p>
                         </div>
 
                         <!-- ИЗМЕНЕНИЕ 7: добавляем 3 новых цвета -->
                         <div class="dresscode-item">
-                            <div class="color-circle" style="background-color: #E9967A;"></div>
+                            <div class="color-circle" style="background-color: #E9967A;" data-color="#E9967A"></div>
                             <h4>Dark Salmon</h4>
                             <p>#E9967A<br>Темный лососевый</p>
                         </div>
                         
                         <div class="dresscode-item">
-                            <div class="color-circle" style="background-color: #B48A72;"></div>
+                            <div class="color-circle" style="background-color: #B48A72;" data-color="#B48A72"></div>
                             <h4>B48A72</h4>
                             <p>#B48A72<br>Теплый коричнево-бежевый</p>
                         </div>
                         
                         <div class="dresscode-item">
-                            <div class="color-circle" style="background-color: #76513F;"></div>
+                            <div class="color-circle" style="background-color: #76513F;" data-color="#76513F"></div>
                             <h4>76513F</h4>
                             <p>#76513F<br>Насыщенный коричневый</p>
                         </div>
