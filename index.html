@@ -856,38 +856,31 @@
             background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
         }
 
+        /* ИЗМЕНЕНИЕ 1 (ПУНКТ 1): Убираем иконку палитры и перемещаем текст */
         .dresscode-icon {
-            margin-bottom: 30px;
+            display: none; /* Скрываем контейнер с иконкой */
         }
 
-        .dresscode-icon-circle {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            color: var(--light-color);
-            font-size: 2.5rem;
-            box-shadow: 0 10px 30px rgba(233, 150, 122, 0.3);
-            animation: rsvpPulse 2s infinite;
-        }
-
-        .dresscode-card h3 {
+        /* Стили для нового заголовка, который заменит иконку */
+        .dresscode-title-text {
+            font-family: 'Gravitas One', cursive;
             color: var(--accent-color);
             font-size: 2.2rem;
-            margin-bottom: 40px;
-            font-family: 'Gravitas One', cursive;
             line-height: 1.4;
+            margin-bottom: 40px; /* Отступ как у старого h3 */
+            font-weight: normal;
         }
 
-        /* ИЗМЕНЕНИЕ 2: палитра цветов в один ряд */
+        /* ИЗМЕНЕНИЕ 2 (ПУНКТ 2): Убираем курсив в мобильной версии */
+        .dresscode-card p, .dresscode-note p {
+            font-style: normal;
+        }
+
+        /* ИЗМЕНЕНИЕ 3 (ПУНКТ 3): Палитра цветов в ряд по 4 на мобильных */
         .dresscode-content {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
             margin-bottom: 30px;
         }
@@ -901,40 +894,14 @@
             text-align: center;
             position: relative;
             overflow: visible;
+            flex: 0 0 auto; /* Отключаем растяжение */
+            width: auto; 
         }
 
-        @media (max-width: 768px) {
-            .dresscode-content {
-                gap: 12px;
-            }
-            
-            .dresscode-item {
-                padding: 8px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .dresscode-content {
-                gap: 10px;
-            }
-            
-            .dresscode-item {
-                padding: 6px;
-            }
-        }
-
-        .dresscode-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .dresscode-item:hover .color-circle {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
+        /* Базовый размер кружка на десктопе */
         .color-circle {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             margin-bottom: 10px;
             border: 3px solid white;
@@ -1001,6 +968,59 @@
         .dresscode-note i {
             color: var(--accent-color);
             margin-right: 10px;
+        }
+
+        /* Мобильные стили для дресс-кода */
+        @media (max-width: 768px) {
+            /* Пункт 2: Убираем курсив */
+            .dresscode-card h3,
+            .dresscode-card p,
+            .dresscode-note p {
+                font-style: normal;
+            }
+            
+            /* Пункт 3: 4 кружка в ряд */
+            .dresscode-content {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr); /* Сетка ровно 4 колонки */
+                gap: 10px;
+                justify-items: center;
+                align-items: start;
+            }
+            
+            .dresscode-item {
+                width: 100%;
+                padding: 5px;
+            }
+
+            /* Уменьшаем кружки для мобильных, чтобы поместились */
+            .color-circle {
+                width: 55px;
+                height: 55px;
+                margin-bottom: 5px;
+            }
+            
+            /* Адаптация для совсем маленьких экранов */
+            @media (max-width: 480px) {
+                .color-circle {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            
+            @media (max-width: 400px) {
+                .color-circle {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+            
+            @media (max-width: 350px) {
+                .color-circle {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
         }
 
         /* ============= RSVP ============= */
@@ -2566,25 +2586,6 @@
                 font-size: 1.02rem; /* 1.2rem * 0.85 = 1.02rem */
             }
             
-            /* Дресс-код секция */
-            .dresscode-content {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .color-circle {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .dresscode-item h4 {
-                font-size: 1.1rem;
-            }
-            
-            .dresscode-item p {
-                font-size: 0.9rem;
-            }
-            
             /* Галерея */
             #gallery {
                 padding: 60px 0; /* Уменьшили padding наполовину */
@@ -2694,6 +2695,12 @@
                 height: 350px;
                 margin-top: 30px; /* Уменьшили отступ */
             }
+
+            /* ИЗМЕНЕНИЕ 6 (ПУНКТ 6): Убираем курсив в FAQ на телефоне */
+            .faq-question,
+            .faq-answer {
+                font-style: normal;
+            }
         }
 
         @media (max-width: 576px) {
@@ -2735,21 +2742,6 @@
             /* Story секция */
             .story-content {
                 gap: 30px; /* Уменьшили gap наполовину */
-            }
-            
-            /* Дресс-код секция */
-            .dresscode-content {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .dresscode-card {
-                padding: 30px 20px;
-            }
-            
-            .dresscode-card h3 {
-                font-size: 1.8rem;
-                margin-bottom: 30px;
             }
             
             /* Галерея */
@@ -3012,7 +3004,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <h3>Место</h3>
-                    <p>База отдыха "Мария"</p>
+                    <p>Резиденция "Мария"</p>
                     <p>ул. Пятница, 8, Энгельс</p>
                     <a href="https://yandex.ru/maps/-/CLxxMHnH" class="btn" target="_blank">Построить маршрут</a>
                 </div>
@@ -3029,12 +3021,10 @@
             </div>
             <div class="dresscode-container">
                 <div class="dresscode-card">
-                    <div class="dresscode-icon">
-                        <div class="dresscode-icon-circle">
-                            <i class="fas fa-palette"></i>
-                        </div>
+                    <!-- ИЗМЕНЕНИЕ 1: Убираем иконку, вместо нее добавляем текст -->
+                    <div class="dresscode-title-text">
+                        Мы готовимся к нашему празднику и просим вас поддержать цветовую гамму в своих нарядах
                     </div>
-                    <h3>Мы готовимся к нашему празднику и просим вас поддержать цветовую гамму в своих нарядах</h3>
                     
                     <div class="dresscode-content">
                         <div class="dresscode-item">
@@ -3088,7 +3078,7 @@
                     </div>
                     
                     <div class="dresscode-note">
-                        <p><i class="fas fa-lightbulb"></i> Вы можете выбрать любой из предложенных цветов или их сочетание. Мы планируем фотосессию на открытом воздухе, поэтому рекомендуем удобную обувь и учитывать погодные условия.</p>
+                        <p><i class="fas fa-lightbulb"></i> Вы можете выбрать любой из предложенных цветов или их сочетание.</p>
                     </div>
                 </div>
             </div>
@@ -3381,7 +3371,8 @@
                     </div>
                     <div class="rsvp-deadline-text">
                         <h4>Не забудьте подтвердить участие!</h4>
-                        <p>Пожалуйста, отправьте форму до <strong>1 марта 2026</strong></p>
+                        <!-- ИЗМЕНЕНИЕ 4: Ставим дату 20 марта 2026 -->
+                        <p>Пожалуйста, отправьте форму до <strong>20 марта 2026</strong></p>
                     </div>
                     <div class="rsvp-deadline-countdown">
                         <div class="rsvp-countdown-item">
@@ -3519,10 +3510,6 @@
                 <div class="footer-hearts">♥ ♥ ♥</div>
                 <p class="footer-message">Ваше присутствие сделает наш день по-настоящему особенным и незабываемым.</p>
                 
-                <div class="footer-bottom">
-                    <p>С любовью, Владислав и Виктория © 2024</p>
-                    <p class="footer-date">05 июня 2026 года</p>
-                </div>
             </div>
         </div>
     </footer>
@@ -3533,7 +3520,8 @@
             <i class="fas fa-pause"></i>
         </button>
         <audio id="weddingMusic" loop>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            <!-- ИЗМЕНЕНИЕ 5 (ПУНКТ 5): Меняем ссылку на музыку Dust - Andrew Morris -->
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
             Ваш браузер не поддерживает аудио элемент.
         </audio>
     </div>
@@ -4078,7 +4066,8 @@
             
             // Обновление дедлайна
             function updateDeadlineCounter() {
-                const deadline = new Date('2026-03-01');
+                // ИЗМЕНЕНИЕ 4: Меняем дату дедлайна на 20 марта 2026
+                const deadline = new Date('2026-03-20T23:59:59');
                 const now = new Date();
                 const diff = deadline - now;
                 
@@ -4334,7 +4323,7 @@
                         balloonContent: `
                             <div style="padding: 15px; max-width: 250px;">
                                 <h3 style="margin: 0 0 10px 0; color: #E9967A; font-family: 'Gravitas One', cursive;">
-                                    База отдыха "Мария"
+                                    Резиденция "Мария"
                                 </h3>
                                 <p style="margin: 0 0 8px 0;">
                                     <strong>Адрес:</strong><br>
@@ -4382,7 +4371,7 @@
                 <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#f5f5f5;border-radius:20px;">
                     <div style="text-align:center;padding:20px;">
                         <i class="fas fa-map-marked-alt" style="font-size:3rem;color:#E9967A;margin-bottom:15px;"></i>
-                        <h3 style="color:#E9967A;margin-bottom:10px;">База отдыха "Мария"</h3>
+                        <h3 style="color:#E9967A;margin-bottom:10px;">Резиденция "Мария"</h3>
                         <p style="margin-bottom:15px;">ул. Пятница, 8, Энгельс</p>
                         <a href="https://yandex.ru/maps/-/CLxxMHnH" target="_blank" 
                            style="display:inline-block;padding:10px 20px;background:#E9967A;color:white;text-decoration:none;border-radius:20px;">
