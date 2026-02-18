@@ -193,7 +193,6 @@
             z-index: 1000;
             transition: var(--transition);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-            /* ИЗМЕНЕНИЕ 6: уменьшаем высоту хедера на треть */
             padding: 0;
         }
 
@@ -217,13 +216,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0; /* Уменьшили padding для более тонкого хедера */
+            padding: 15px 0;
             position: relative;
         }
 
         .logo {
             font-family: 'Gravitas One', cursive;
-            font-size: 2rem; /* Немного уменьшили логотип */
+            font-size: 2rem;
             font-weight: 600;
             color: var(--light-color);
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -475,7 +474,6 @@
         }
 
         /* ============= SECTION STYLING ============= */
-        /* ИЗМЕНЕНИЕ 3: уменьшаем разрыв между всеми блоками наполовину на мобильных */
         section {
             padding: 120px 0;
             opacity: 0;
@@ -528,7 +526,6 @@
             min-width: 300px;
         }
 
-        /* ИЗМЕНЕНИЕ 2: уменьшаем шрифт параграфов на 15% на мобильных */
         .story-text p {
             margin-bottom: 25px;
             font-size: 1.2rem;
@@ -536,7 +533,6 @@
             text-align: justify;
         }
 
-        /* ИЗМЕНЕНИЕ 1: диагональное расположение фото на мобильных */
         .story-images {
             flex: 1;
             display: grid;
@@ -856,27 +852,23 @@
             background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
         }
 
-        /* ИЗМЕНЕНИЕ 1 (ПУНКТ 1): Убираем иконку палитры и перемещаем текст */
         .dresscode-icon {
-            display: none; /* Скрываем контейнер с иконкой */
+            display: none;
         }
 
-        /* Стили для нового заголовка, который заменит иконку */
         .dresscode-title-text {
             font-family: 'Gravitas One', cursive;
             color: var(--accent-color);
             font-size: 2.2rem;
             line-height: 1.4;
-            margin-bottom: 40px; /* Отступ как у старого h3 */
+            margin-bottom: 40px;
             font-weight: normal;
         }
 
-        /* ИЗМЕНЕНИЕ 2 (ПУНКТ 2): Убираем курсив в мобильной версии */
         .dresscode-card p, .dresscode-note p {
             font-style: normal;
         }
 
-        /* ИЗМЕНЕНИЕ 3 (ПУНКТ 3): Палитра цветов в ряд по 4 на мобильных */
         .dresscode-content {
             display: flex;
             flex-wrap: wrap;
@@ -894,11 +886,10 @@
             text-align: center;
             position: relative;
             overflow: visible;
-            flex: 0 0 auto; /* Отключаем растяжение */
+            flex: 0 0 auto;
             width: auto; 
         }
 
-        /* Базовый размер кружка на десктопе */
         .color-circle {
             width: 70px;
             height: 70px;
@@ -924,14 +915,13 @@
         }
 
         .dresscode-item h4 {
-            display: none; /* Скрываем названия цветов */
+            display: none;
         }
 
         .dresscode-item p {
-            display: none; /* Скрываем HEX коды */
+            display: none;
         }
 
-        /* Добавляем всплывающую подсказку при наведении */
         .color-circle:hover::before {
             content: attr(data-color);
             position: absolute;
@@ -970,19 +960,16 @@
             margin-right: 10px;
         }
 
-        /* Мобильные стили для дресс-кода */
         @media (max-width: 768px) {
-            /* Пункт 2: Убираем курсив */
             .dresscode-card h3,
             .dresscode-card p,
             .dresscode-note p {
                 font-style: normal;
             }
             
-            /* Пункт 3: 4 кружка в ряд */
             .dresscode-content {
                 display: grid;
-                grid-template-columns: repeat(4, 1fr); /* Сетка ровно 4 колонки */
+                grid-template-columns: repeat(4, 1fr);
                 gap: 10px;
                 justify-items: center;
                 align-items: start;
@@ -993,14 +980,12 @@
                 padding: 5px;
             }
 
-            /* Уменьшаем кружки для мобильных, чтобы поместились */
             .color-circle {
                 width: 55px;
                 height: 55px;
                 margin-bottom: 5px;
             }
             
-            /* Адаптация для совсем маленьких экранов */
             @media (max-width: 480px) {
                 .color-circle {
                     width: 50px;
@@ -1028,13 +1013,12 @@
             background: linear-gradient(135deg, rgba(255, 239, 213, 0.3), rgba(255, 239, 213, 0.1));
         }
 
-        /* ИЗМЕНЕНИЕ 4: Убрали отступ для subtitle */
         .rsvp-subtitle {
             text-align: center;
             color: var(--accent-color);
             font-size: 1.2rem;
-            margin-top: 0; /* Убрали отрицательный отступ */
-            margin-bottom: 30px; /* Уменьшили отступ снизу */
+            margin-top: 0;
+            margin-bottom: 30px;
             font-weight: 300;
         }
 
@@ -1064,7 +1048,6 @@
             }
         }
 
-        /* Шаг 1: Вход */
         .rsvp-step-card {
             background: var(--light-color);
             border-radius: 25px;
@@ -1187,7 +1170,6 @@
             transition: transform 0.3s ease;
         }
 
-        /* ИЗМЕНЕНИЕ 5: убираем курсив с подсказки в мобильной версии */
         .rsvp-step-hint {
             margin-top: 25px;
             color: #888;
@@ -1195,7 +1177,6 @@
             font-style: italic;
         }
 
-        /* Шаг 2: Форма */
         .rsvp-form-header {
             display: flex;
             justify-content: space-between;
@@ -1368,7 +1349,6 @@
             transform: translateY(-3px);
         }
 
-        /* Шаг 3: Успешная отправка */
         .rsvp-success-card {
             background: var(--light-color);
             border-radius: 25px;
@@ -1585,7 +1565,6 @@
             margin: 0;
         }
 
-        /* Шаг 4: Уже отправлено */
         .rsvp-already-card {
             background: var(--light-color);
             border-radius: 25px;
@@ -1732,7 +1711,6 @@
             gap: 10px;
         }
 
-        /* Баннер дедлайна */
         .rsvp-deadline-banner {
             margin-top: 50px;
             background: linear-gradient(135deg, rgba(255, 160, 122, 0.9), rgba(233, 150, 122, 0.9));
@@ -1839,7 +1817,6 @@
             margin: 0 auto;
         }
 
-        /* ОСНОВНОЙ КОНТЕЙНЕР ДЛЯ КАРУСЕЛИ */
         .video-gallery-wrapper {
             position: relative;
             width: 100%;
@@ -1848,14 +1825,12 @@
             overflow: hidden;
         }
         
-        /* КОНТЕЙНЕР С ВСЕМИ ВИДЕО */
         .video-container {
             display: flex;
             height: 100%;
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
-        /* ОДИН СЛАЙД (ВИДЕО) */
         .video-slide {
             flex: 0 0 100%;
             height: 100%;
@@ -1866,7 +1841,6 @@
             position: relative;
         }
         
-        /* ОБОЛОЧКА ВИДЕО */
         .video-wrapper {
             width: 100%;
             height: 100%;
@@ -1880,7 +1854,6 @@
             transform: scale(0.85);
         }
         
-        /* АКТИВНОЕ (ЦЕНТРАЛЬНОЕ) ВИДЕО */
         .video-slide.active .video-wrapper {
             width: 100%;
             opacity: 1;
@@ -1890,7 +1863,6 @@
             z-index: 2;
         }
         
-        /* БОКОВЫЕ ВИДЕО */
         .video-slide.prev .video-wrapper,
         .video-slide.next .video-wrapper {
             position: absolute;
@@ -1901,17 +1873,14 @@
             z-index: 1;
         }
         
-        /* ЛЕВОЕ БОКОВОЕ ВИДЕО */
         .video-slide.prev .video-wrapper {
             left: 0;
         }
         
-        /* ПРАВОЕ БОКОВОЕ ВИДЕО */
         .video-slide.next .video-wrapper {
             right: 0;
         }
         
-        /* САМО ВИДЕО */
         .video-wrapper video {
             width: 100%;
             height: 100%;
@@ -1923,7 +1892,6 @@
             transform: scale(1.05);
         }
         
-        /* КНОПКА ВОСПРОИЗВЕДЕНИЯ */
         .play-overlay {
             position: absolute;
             top: 0;
@@ -1967,7 +1935,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* ИНФОРМАЦИЯ О ВИДЕО */
         .video-info {
             position: absolute;
             bottom: 30px;
@@ -2000,7 +1967,6 @@
             max-width: 80%;
         }
 
-        /* ИНДИКАТОРЫ */
         .slide-indicators {
             display: flex;
             justify-content: center;
@@ -2035,7 +2001,6 @@
             transition: all 0.3s;
         }
         
-        /* ПРОГРЕСС-БАР ДЛЯ АКТИВНОГО ИНДИКАТОРА */
         .progress-indicator {
             width: 100px;
             height: 4px;
@@ -2052,7 +2017,6 @@
             transition: width 0.1s linear;
         }
         
-        /* КНОПКИ НАВИГАЦИИ */
         .nav-buttons {
             display: flex;
             justify-content: center;
@@ -2318,57 +2282,48 @@
             margin-top: 10px;
         }
 
-        /* ============= MUSIC PLAYER ============= */
-        .music-player {
+        /* ============= YANDEX MUSIC PLAYER ============= */
+        .yandex-music-player {
             position: fixed;
             bottom: 30px;
             right: 30px;
             z-index: 1000;
+            background: transparent;
+            box-shadow: 0 8px 25px rgba(233, 150, 122, 0.5);
+            border-radius: 40px;
+            transition: all 0.3s ease;
         }
 
-        .music-btn {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-            color: var(--light-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(233, 150, 122, 0.5);
-            transition: var(--transition);
+        .yandex-music-player:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(233, 150, 122, 0.7);
+        }
+
+        .yandex-music-player iframe {
             border: none;
-            font-size: 1.8rem;
-            position: relative;
+            width: 300px;
+            height: 80px;
+            border-radius: 40px;
             overflow: hidden;
         }
 
-        .music-btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(233, 150, 122, 0.8);
-            border-radius: 50%;
-            transform: scale(0);
-            transition: transform 0.5s ease;
+        @media (max-width: 768px) {
+            .yandex-music-player {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .yandex-music-player iframe {
+                width: 250px !important;
+                height: 70px !important;
+            }
         }
 
-        .music-btn:hover:before {
-            transform: scale(1);
-        }
-
-        .music-btn i {
-            position: relative;
-            z-index: 1;
-        }
-
-        .music-btn:hover {
-            transform: scale(1.1) rotate(10deg);
-            box-shadow: 0 12px 30px rgba(233, 150, 122, 0.7);
+        @media (max-width: 480px) {
+            .yandex-music-player iframe {
+                width: 200px !important;
+                height: 60px !important;
+            }
         }
 
         /* ============= ANIMATIONS ============= */
@@ -2474,7 +2429,6 @@
                 transform: translateX(0);
             }
             
-            /* RSVP адаптивность */
             .rsvp-step-features {
                 flex-direction: column;
                 align-items: center;
@@ -2493,14 +2447,13 @@
         }
 
         @media (max-width: 768px) {
-            /* Мобильное меню */
             .mobile-menu-btn {
                 display: block;
             }
             
             nav {
                 position: fixed;
-                top: 70px; /* Уменьшили чтобы соответствовать новому хедеру */
+                top: 70px;
                 left: 0;
                 width: 100%;
                 background-color: var(--secondary-color);
@@ -2524,7 +2477,6 @@
                 margin: 15px 0;
             }
             
-            /* Hero секция */
             .hero h1 {
                 font-size: 3rem;
             }
@@ -2551,7 +2503,6 @@
                 );
             }
             
-            /* ИЗМЕНЕНИЕ 1: уменьшить квадраты с количеством времени в полтора раза */
             .countdown {
                 flex-wrap: wrap;
                 margin-top: 30px;
@@ -2559,36 +2510,33 @@
             }
             
             .countdown-item {
-                min-width: 60px !important; /* Уменьшили в полтора раза */
-                padding: 10px 12px !important; /* Уменьшили отступы */
+                min-width: 60px !important;
+                padding: 10px 12px !important;
                 border-radius: 8px;
             }
             
             .countdown-number {
-                font-size: 1.5rem !important; /* Уменьшили шрифт чисел */
+                font-size: 1.5rem !important;
             }
             
             .countdown-label {
-                font-size: 0.7rem !important; /* Уменьшили шрифт подписей */
+                font-size: 0.7rem !important;
             }
             
             .section-title h2 {
                 font-size: 2.3rem;
             }
             
-            /* Story секция */
             .story-images {
                 grid-template-columns: 1fr;
             }
             
-            /* ИЗМЕНЕНИЕ 2: уменьшаем шрифт параграфов на 15% */
             .story-text p {
-                font-size: 1.02rem; /* 1.2rem * 0.85 = 1.02rem */
+                font-size: 1.02rem;
             }
             
-            /* Галерея */
             #gallery {
-                padding: 60px 0; /* Уменьшили padding наполовину */
+                padding: 60px 0;
             }
             
             .gallery-header h2 {
@@ -2601,7 +2549,7 @@
             
             .video-gallery-wrapper {
                 height: 350px;
-                margin-bottom: 40px; /* Уменьшили отступ */
+                margin-bottom: 40px;
             }
             
             .video-info {
@@ -2629,7 +2577,6 @@
                 width: 80px;
             }
             
-            /* RSVP адаптивность */
             .rsvp-step-card,
             .rsvp-success-card,
             .rsvp-already-card {
@@ -2666,12 +2613,10 @@
                 width: 100%;
             }
             
-            /* ИЗМЕНЕНИЕ 5: убираем курсив с текста в мобильной версии */
             .rsvp-step-hint {
                 font-style: normal !important;
             }
             
-            /* Контакты */
             .contacts-container {
                 gap: 30px;
             }
@@ -2681,7 +2626,6 @@
                 max-width: 350px;
             }
             
-            /* Модальное окно музыки */
             .consent-content {
                 padding: 30px 20px;
             }
@@ -2690,13 +2634,11 @@
                 flex-direction: column;
             }
             
-            /* Карта */
             .map-container {
                 height: 350px;
-                margin-top: 30px; /* Уменьшили отступ */
+                margin-top: 30px;
             }
 
-            /* ИЗМЕНЕНИЕ 6 (ПУНКТ 6): Убираем курсив в FAQ на телефоне */
             .faq-question,
             .faq-answer {
                 font-style: normal;
@@ -2712,7 +2654,6 @@
                 font-size: 1.7rem;
             }
             
-            /* ИЗМЕНЕНИЕ 1: еще сильнее уменьшаем квадраты на очень маленьких экранах */
             .countdown-item {
                 min-width: 50px !important;
                 padding: 8px 10px !important;
@@ -2730,21 +2671,18 @@
                 font-size: 2rem;
             }
             
-            /* ИЗМЕНЕНИЕ 3: уменьшаем разрыв между всеми блоками наполовину */
             section {
-                padding: 60px 0 !important; /* Уменьшили padding наполовину */
+                padding: 60px 0 !important;
             }
             
             .section-title {
-                margin-bottom: 40px !important; /* Уменьшили отступ наполовину */
+                margin-bottom: 40px !important;
             }
             
-            /* Story секция */
             .story-content {
-                gap: 30px; /* Уменьшили gap наполовину */
+                gap: 30px;
             }
             
-            /* Галерея */
             .video-gallery-wrapper {
                 height: 250px;
             }
@@ -2776,7 +2714,6 @@
                 font-size: 1.2rem;
             }
             
-            /* RSVP адаптивность */
             .rsvp-google-form-frame {
                 height: 550px;
             }
@@ -2787,62 +2724,51 @@
             
             .rsvp-form-instructions {
                 grid-template-columns: 1fr;
-                gap: 15px; /* Уменьшили gap */
-                margin-bottom: 30px; /* Уменьшили отступ */
+                gap: 15px;
+                margin-bottom: 30px;
             }
             
             .rsvp-deadline-banner {
-                margin-top: 30px; /* Уменьшили отступ */
-                padding: 20px; /* Уменьшили padding */
+                margin-top: 30px;
+                padding: 20px;
             }
             
-            /* Карточки */
             .detail-card {
                 padding: 30px 20px;
             }
             
             .details-container {
-                gap: 20px; /* Уменьшили gap */
+                gap: 20px;
             }
             
-            /* Музыкальный плеер */
-            .music-btn {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            /* Карта */
             .map-container {
                 height: 300px;
-                margin-top: 30px; /* Уменьшили отступ */
+                margin-top: 30px;
             }
             
-            /* FAQ */
             .faq-container {
-                margin-top: 30px; /* Уменьшили отступ */
+                margin-top: 30px;
             }
             
             .faq-item {
-                margin-bottom: 15px; /* Уменьшили отступ */
+                margin-bottom: 15px;
             }
             
             .faq-question {
-                padding: 20px; /* Уменьшили padding */
+                padding: 20px;
             }
             
-            /* Footer */
             footer {
-                padding: 30px 0 20px; /* Уменьшили padding наполовину */
+                padding: 30px 0 20px;
             }
             
             .footer-content {
-                margin-bottom: 20px; /* Уменьшили отступ */
+                margin-bottom: 20px;
             }
             
             .footer-bottom {
-                padding-top: 15px; /* Уменьшили padding */
-                margin-top: 15px; /* Уменьшили отступ */
+                padding-top: 15px;
+                margin-top: 15px;
             }
         }
     </style>
@@ -2856,16 +2782,16 @@
         </div>
     </div>
 
-    <!-- Music Consent Modal -->
+    <!-- Music Consent Modal (больше не нужен для iframe, но оставляем для согласия на автоскролл) -->
     <div class="music-consent-modal" id="musicConsentModal">
         <div class="consent-content" id="consentContent">
             <div class="consent-icon">
                 <i class="fas fa-music"></i>
             </div>
             <h3>Музыкальное сопровождение</h3>
-            <p>Хотите включить фоновую музыку для создания атмосферы? Музыка начнет играть сразу после вашего согласия.</p>
+            <p>Хотите включить фоновую музыку для создания атмосферы?</p>
             <div class="consent-buttons">
-                <button class="consent-btn yes" id="consentYes">Да, включить музыку</button>
+                <button class="consent-btn yes" id="consentYes">Да, включить</button>
                 <button class="consent-btn no" id="consentNo">Нет, спасибо</button>
             </div>
         </div>
@@ -2897,29 +2823,22 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <!-- Live Photo Video Background -->
         <div class="hero-live-bg">
             <video class="hero-live-video" autoplay muted loop playsinline preload="metadata">
                 <source src="kater_video.mp4" type="video/mp4">
-                <!-- WebP fallback -->
                 <picture>
                     <source srcset="kater.webp" type="image/webp">
                     <source srcset="kater.jpg" type="image/jpeg">
                     <img src="kater.jpg" alt="Фон свадьбы" loading="lazy">
                 </picture>
             </video>
-            
-            <!-- Темный оверлей для лучшей читаемости текста -->
             <div class="hero-overlay"></div>
-            
-            <!-- Индикатор Live Photo -->
             <div class="live-indicator">
                 <i class="fas fa-play-circle"></i>
                 <span>Live Photo</span>
             </div>
         </div>
         
-        <!-- Контент поверх видео -->
         <div class="hero-content">
             <h1>Владислав и Виктория</h1>
             <p>Приглашаем разделить с нами радость нашего дня</p>
@@ -3008,7 +2927,6 @@
                     <p>ул. Пятница, 8, Энгельс</p>
                     <a href="https://yandex.ru/maps/-/CLxxMHnH" class="btn" target="_blank">Построить маршрут</a>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -3021,7 +2939,6 @@
             </div>
             <div class="dresscode-container">
                 <div class="dresscode-card">
-                    <!-- ИЗМЕНЕНИЕ 1: Убираем иконку, вместо нее добавляем текст -->
                     <div class="dresscode-title-text">
                         Мы готовимся к нашему празднику и просим вас поддержать цветовую гамму в своих нарядах
                     </div>
@@ -3057,7 +2974,6 @@
                             <p>#BEC88F<br>Приглушенный зеленый</p>
                         </div>
 
-                        <!-- ИЗМЕНЕНИЕ 7: добавляем 3 новых цвета -->
                         <div class="dresscode-item">
                             <div class="color-circle" style="background-color: #E9967A;" data-color="#E9967A"></div>
                             <h4>Dark Salmon</h4>
@@ -3371,7 +3287,6 @@
                     </div>
                     <div class="rsvp-deadline-text">
                         <h4>Не забудьте подтвердить участие!</h4>
-                        <!-- ИЗМЕНЕНИЕ 4: Ставим дату 20 марта 2026 -->
                         <p>Пожалуйста, отправьте форму до <strong>20 марта 2026</strong></p>
                     </div>
                     <div class="rsvp-deadline-countdown">
@@ -3510,20 +3425,17 @@
                 <div class="footer-hearts">♥ ♥ ♥</div>
                 <p class="footer-message">Ваше присутствие сделает наш день по-настоящему особенным и незабываемым.</p>
                 
+                <div class="footer-bottom">
+                    <p>С любовью, Владислав и Виктория © 2024</p>
+                    <p class="footer-date">05 июня 2026 года</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Music Player -->
-    <div class="music-player">
-        <button class="music-btn" id="musicToggle">
-            <i class="fas fa-pause"></i>
-        </button>
-        <audio id="weddingMusic" loop>
-            <!-- ИЗМЕНЕНИЕ 5 (ПУНКТ 5): Меняем ссылку на музыку Dust - Andrew Morris -->
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
-            Ваш браузер не поддерживает аудио элемент.
-        </audio>
+    <!-- Яндекс.Музыка плеер (исправленная версия) -->
+    <div class="yandex-music-player">
+<iframe frameborder="0" allow="clipboard-write" style="border:none;width:614px;height:244px;" width="614" height="244" src="https://music.yandex.ru/#iframe/album/158918/track/1578662">Слушайте <a href="https://music.yandex.ru/album/158918/track/1578662?utm_source=web&utm_medium=copy_link">Dust</a> — <a href="https://music.yandex.ru/artist/283018">Andrew Morris</a> на Яндекс Музыке</iframe>
     </div>
 
     <script>
@@ -3531,7 +3443,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             const initialLoad = document.getElementById('initialLoad');
             
-            // FORCE REMOVE LOADER AFTER 3 SECONDS AS A SAFETY NET
             setTimeout(function() {
                 if (initialLoad && !initialLoad.classList.contains('hidden')) {
                     console.log('Скрываем лоадер по таймауту');
@@ -3542,10 +3453,8 @@
                 }
             }, 3000);
             
-            // Убедимся, что страница полностью загружена
             window.addEventListener('load', function() {
                 console.log('Страница полностью загружена');
-                // Минимальная задержка для плавности
                 setTimeout(() => {
                     if (initialLoad) {
                         initialLoad.classList.add('hidden');
@@ -3553,27 +3462,22 @@
                         document.body.style.overflow = '';
                         window.scrollTo(0, 0);
                     }
-                }, 800); // Уменьшил время до 800мс
+                }, 800);
             });
             
-            // Прокрутка в самый верх на всякий случай
             window.scrollTo(0, 0);
             
-            // Также предотвращаем скролл по якорю в URL
             if (window.location.hash) {
-                // Убираем якорь из URL без перезагрузки страницы
                 history.replaceState(null, null, ' ');
             }
         });
 
         // ============= IMAGE ERROR HANDLING =============
         document.addEventListener('DOMContentLoaded', function() {
-            // Добавляем обработчики ошибок для всех изображений
             document.querySelectorAll('img').forEach(img => {
                 img.addEventListener('error', function(e) {
                     console.warn('Ошибка загрузки WebP изображения:', this.src);
                     
-                    // Пробуем загрузить JPG если WebP не загрузился
                     const jpgSrc = this.src.replace('.webp', '.jpg');
                     if (jpgSrc !== this.src) {
                         console.log('Пробуем загрузить JPG вместо WebP:', jpgSrc);
@@ -3583,6 +3487,42 @@
             });
         });
 
+        // ============= MUSIC CONSENT MODAL =============
+        const musicConsentModal = document.getElementById('musicConsentModal');
+        const consentContent = document.getElementById('consentContent');
+        const consentYes = document.getElementById('consentYes');
+        const consentNo = document.getElementById('consentNo');
+        
+        // Check if user has already made a choice
+        const musicConsent = localStorage.getItem('musicConsent');
+        
+        if (musicConsent === 'accepted' || musicConsent === 'declined') {
+            musicConsentModal.classList.add('hidden');
+        } else {
+            setTimeout(() => {
+                musicConsentModal.classList.remove('hidden');
+                consentContent.classList.remove('hidden');
+            }, 1000);
+        }
+        
+        // Handle consent yes
+        consentYes.addEventListener('click', () => {
+            localStorage.setItem('musicConsent', 'accepted');
+            consentContent.classList.add('hidden');
+            setTimeout(() => {
+                musicConsentModal.classList.add('hidden');
+            }, 500);
+        });
+        
+        // Handle consent no
+        consentNo.addEventListener('click', () => {
+            localStorage.setItem('musicConsent', 'declined');
+            consentContent.classList.add('hidden');
+            setTimeout(() => {
+                musicConsentModal.classList.add('hidden');
+            }, 500);
+        });
+
         // ============= ВИДЕОКАРУСЕЛЬ =============
         document.addEventListener('DOMContentLoaded', function() {
             const videoContainer = document.getElementById('videoContainer');
@@ -3590,37 +3530,36 @@
             const prevButton = document.getElementById('prevButton');
             const nextButton = document.getElementById('nextButton');
             
-            // Данные для видео - ИЗМЕНЕНО: .jpg заменены на .webp
             const videos = [
                 {
                     title: "Наше первое знакомство",
                     description: "Случайная встреча в кофейне, изменившая нашу жизнь навсегда",
                     src: "vid1.mp4",
-                    poster: "vladislav-viktoria-1.webp"  // ← ИЗМЕНЕНО
+                    poster: "vladislav-viktoria-1.webp"
                 },
                 {
                     title: "Путешествие в горы",
                     description: "Тот самый момент, когда прозвучало предложение руки и сердца",
                     src: "vid2.mp4",
-                    poster: "vladislav-viktoria-8.webp"  // ← ИЗМЕНЕНО
+                    poster: "vladislav-viktoria-8.webp"
                 },
                 {
                     title: "Подготовка к свадьбе",
                     description: "Волнующие моменты подготовки к самому важному дню",
                     src: "vid3.mp4",
-                    poster: "vladislav-viktoria-5.webp"  // ← ИЗМЕНЕНО
+                    poster: "vladislav-viktoria-5.webp"
                 },
                 {
                     title: "Наши друзья",
                     description: "Люди, которые всегда были рядом и поддерживали нас",
                     src: "vid1.mp4",
-                    poster: "vladislav-viktoria-3.webp"  // ← ИЗМЕНЕНО
+                    poster: "vladislav-viktoria-3.webp"
                 },
                 {
                     title: "Мечты о будущем",
                     description: "Наши планы и мечты о совместной жизни",
                     src: "vid3.mp4",
-                    poster: "vladislav-viktoria-1.webp"  // ← ИЗМЕНЕНО (было wedding-background.jpg)
+                    poster: "vladislav-viktoria-1.webp"
                 }
             ];
             
@@ -3629,7 +3568,6 @@
             let videoElements = [];
             let progressInterval;
             
-            // ИНИЦИАЛИЗАЦИЯ КАРУСЕЛИ
             function initCarousel() {
                 createVideoSlides();
                 createIndicators();
@@ -3637,7 +3575,6 @@
                 startProgressBar();
             }
             
-            // СОЗДАНИЕ ВИДЕО СЛАЙДОВ
             function createVideoSlides() {
                 videoContainer.innerHTML = '';
                 videoElements = [];
@@ -3650,29 +3587,23 @@
                     const videoWrapper = document.createElement('div');
                     videoWrapper.classList.add('video-wrapper');
                     
-                    // Создаем элемент видео
                     const video = document.createElement('video');
                     video.src = videos[i].src;
                     video.poster = videos[i].poster;
                     video.preload = "metadata";
                     
-                    // Обработка ошибок видео и постеров
                     video.addEventListener('error', function(e) {
                         console.error('Ошибка загрузки видео:', videos[i].title, e);
-                        // Показываем постер вместо видео
                         videoWrapper.style.backgroundImage = `url('${videos[i].poster}')`;
                         videoWrapper.style.backgroundSize = 'cover';
                         videoWrapper.style.backgroundPosition = 'center';
                         video.style.display = 'none';
                     });
                     
-                    // Обработка ошибок постеров (WebP)
                     video.addEventListener('loadeddata', function() {
-                        // Проверяем, загрузился ли постер
                         if (video.poster && video.poster.includes('.webp')) {
                             const img = new Image();
                             img.onerror = function() {
-                                // Если WebP не загрузился, пробуем JPG
                                 const jpgPoster = video.poster.replace('.webp', '.jpg');
                                 console.log('WebP не загрузился, пробуем JPG:', jpgPoster);
                                 video.poster = jpgPoster;
@@ -3684,14 +3615,12 @@
                     videoWrapper.appendChild(video);
                     videoElements.push(video);
                     
-                    // Play overlay
                     const playOverlay = document.createElement('div');
                     playOverlay.classList.add('play-overlay');
                     playOverlay.innerHTML = '<div class="play-icon"><i class="fas fa-play"></i></div>';
                     
                     videoWrapper.appendChild(playOverlay);
                     
-                    // Информация о видео
                     const videoInfo = document.createElement('div');
                     videoInfo.classList.add('video-info');
                     videoInfo.innerHTML = `
@@ -3703,7 +3632,6 @@
                     slide.appendChild(videoInfo);
                     videoContainer.appendChild(slide);
                     
-                    // Обработчик клика на видео
                     videoWrapper.addEventListener('click', (e) => {
                         e.stopPropagation();
                         if (i === currentSlide) {
@@ -3713,7 +3641,6 @@
                         }
                     });
                     
-                    // Обработчик двойного клика для полноэкранного режима
                     videoWrapper.addEventListener('dblclick', (e) => {
                         e.stopPropagation();
                         if (video.requestFullscreen) {
@@ -3727,7 +3654,6 @@
                 }
             }
             
-            // СОЗДАНИЕ ИНДИКАТОРОВ
             function createIndicators() {
                 slideIndicators.innerHTML = '';
                 
@@ -3748,12 +3674,10 @@
                 }
             }
             
-            // ОБНОВЛЕНИЕ КАРУСЕЛИ
             function updateCarousel() {
                 const slides = document.querySelectorAll('.video-slide');
                 const indicators = document.querySelectorAll('.indicator');
                 
-                // Сбрасываем все классы
                 slides.forEach(slide => {
                     slide.classList.remove('active', 'prev', 'next');
                     const video = slide.querySelector('video');
@@ -3765,19 +3689,16 @@
                 
                 indicators.forEach(indicator => {
                     indicator.classList.remove('active');
-                    // Удаляем прогресс-бар если есть
                     const existingProgress = indicator.querySelector('.progress-indicator');
                     if (existingProgress) {
                         existingProgress.remove();
                     }
                 });
                 
-                // Текущий слайд
                 const currentSlideElement = slides[currentSlide];
                 if (currentSlideElement) {
                     currentSlideElement.classList.add('active');
                     
-                    // Запускаем видео на активном слайде
                     const video = currentSlideElement.querySelector('video');
                     if (video) {
                         video.play().catch(e => {
@@ -3786,26 +3707,22 @@
                     }
                 }
                 
-                // Предыдущий слайд
                 const prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
                 const prevSlideElement = slides[prevIndex];
                 if (prevSlideElement) {
                     prevSlideElement.classList.add('prev');
                 }
                 
-                // Следующий слайд
                 const nextIndex = (currentSlide + 1) % totalSlides;
                 const nextSlideElement = slides[nextIndex];
                 if (nextSlideElement) {
                     nextSlideElement.classList.add('next');
                 }
                 
-                // Обновляем индикаторы
                 const currentIndicator = indicators[currentSlide];
                 if (currentIndicator) {
                     currentIndicator.classList.add('active');
                     
-                    // Добавляем прогресс-бар к активному индикатору
                     const progressIndicator = document.createElement('div');
                     progressIndicator.classList.add('progress-indicator');
                     
@@ -3816,15 +3733,12 @@
                     progressIndicator.appendChild(progressBar);
                     currentIndicator.appendChild(progressIndicator);
                     
-                    // Запускаем прогресс-бар
                     startProgressBar();
                 }
                 
-                // Позиционируем контейнер
                 videoContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
             }
             
-            // ПЕРЕХОД К СЛАЙДУ
             function goToSlide(slideIndex) {
                 if (slideIndex === currentSlide) return;
                 
@@ -3833,7 +3747,6 @@
                 startProgressBar();
             }
             
-            // ПЕРЕКЛЮЧЕНИЕ ВОСПРОИЗВЕДЕНИЯ ВИДЕО
             function toggleVideoPlayback(video, playOverlay) {
                 const playIcon = playOverlay.querySelector('.play-icon i');
                 if (video.paused) {
@@ -3845,7 +3758,6 @@
                 }
             }
             
-            // ПРОГРЕСС-БАР ДЛЯ АВТОПЕРЕКЛЮЧЕНИЯ
             function startProgressBar() {
                 stopProgressBar();
                 
@@ -3853,8 +3765,8 @@
                 if (!progressBar) return;
                 
                 let width = 0;
-                const duration = 10000; // 10 секунд
-                const interval = 100; // Обновляем каждые 100мс
+                const duration = 10000;
+                const interval = 100;
                 const increment = (interval / duration) * 100;
                 
                 progressInterval = setInterval(() => {
@@ -3863,7 +3775,6 @@
                     
                     if (width >= 100) {
                         stopProgressBar();
-                        // Автоматически переходим к следующему слайду
                         const nextSlide = (currentSlide + 1) % totalSlides;
                         goToSlide(nextSlide);
                     }
@@ -3876,7 +3787,6 @@
                 }
             }
             
-            // НАВИГАЦИЯ
             prevButton.addEventListener('click', () => {
                 const prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
                 goToSlide(prevSlide);
@@ -3887,7 +3797,6 @@
                 goToSlide(nextSlide);
             });
             
-            // СВАЙП ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
             let touchStartX = 0;
             let touchEndX = 0;
             
@@ -3907,18 +3816,15 @@
                 
                 if (Math.abs(diff) > swipeThreshold) {
                     if (diff > 0) {
-                        // Свайп влево - следующий слайд
                         const nextSlide = (currentSlide + 1) % totalSlides;
                         goToSlide(nextSlide);
                     } else {
-                        // Свайп вправо - предыдущий слайд
                         const prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
                         goToSlide(prevSlide);
                     }
                 }
             }
             
-            // КЛАВИАТУРНАЯ НАВИГАЦИЯ
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowLeft') {
                     e.preventDefault();
@@ -3941,10 +3847,8 @@
                 }
             });
             
-            // ИНИЦИАЛИЗАЦИЯ
             initCarousel();
             
-            // ОСТАНАВЛИВАЕМ ПРОГРЕСС-БАР ПРИ НАВЕДЕНИИ
             videoContainer.addEventListener('mouseenter', () => {
                 stopProgressBar();
             });
@@ -3956,7 +3860,6 @@
 
         // ============= RSVP FLOW LOGIC =============
         document.addEventListener('DOMContentLoaded', function() {
-            // Элементы
             const steps = document.querySelectorAll('.rsvp-step');
             const openFormBtn = document.getElementById('rsvpOpenFormBtn');
             const submitCompletedBtn = document.getElementById('rsvpSubmitCompletedBtn');
@@ -3968,17 +3871,14 @@
             const alreadyDate = document.getElementById('rsvpAlreadyDate');
             const alreadyTime = document.getElementById('rsvpAlreadyTime');
             
-            // Проверяем, была ли уже отправлена форма
             const submissionData = localStorage.getItem('weddingFormSubmission');
             
             if (submissionData) {
                 const data = JSON.parse(submissionData);
                 const submissionDate = new Date(data.timestamp);
                 
-                // Показываем шаг 4 (уже отправлено)
                 showStep(4);
                 
-                // Заполняем дату и время
                 alreadyDate.textContent = submissionDate.toLocaleDateString('ru-RU', {
                     day: 'numeric',
                     month: 'long',
@@ -3989,21 +3889,17 @@
                     minute: '2-digit'
                 });
             } else {
-                // Показываем шаг 1 (вход)
                 showStep(1);
             }
             
-            // Кнопка открытия формы
             openFormBtn.addEventListener('click', function() {
                 showStep(2);
             });
             
-            // Кнопка отмены
             cancelFormBtn.addEventListener('click', function() {
                 showStep(1);
             });
             
-            // Кнопка "Я отправил форму"
             submitCompletedBtn.addEventListener('click', function() {
                 const submissionData = {
                     timestamp: Date.now()
@@ -4011,7 +3907,6 @@
                 
                 localStorage.setItem('weddingFormSubmission', JSON.stringify(submissionData));
                 
-                // Обновляем дату в успешном сообщении
                 const now = new Date();
                 submissionDateValue.textContent = now.toLocaleDateString('ru-RU', {
                     day: 'numeric',
@@ -4022,33 +3917,26 @@
                 });
                 
                 showStep(3);
-                playSuccessAnimation();
             });
             
-            // Кнопка "Заполнить за другого гостя" (из успеха)
             anotherGuestBtn.addEventListener('click', function() {
                 localStorage.removeItem('weddingFormSubmission');
                 location.reload();
             });
             
-            // Кнопка "Заполнить за другого гостя" (из уже отправленного)
             submitAnotherBtn.addEventListener('click', function() {
                 localStorage.removeItem('weddingFormSubmission');
                 location.reload();
             });
             
-            // Кнопка закрытия страницы
             closePageBtn.addEventListener('click', function() {
-                // Плавное скрытие страницы
                 document.body.style.transition = 'opacity 0.5s ease';
                 document.body.style.opacity = '0';
                 setTimeout(() => {
-                    // В реальном сценарии можно закрыть окно или перейти на другую страницу
                     alert('Спасибо за участие! Вы можете закрыть эту вкладку.');
                 }, 500);
             });
             
-            // Функции
             function showStep(stepNumber) {
                 steps.forEach(step => {
                     step.classList.remove('active');
@@ -4056,17 +3944,10 @@
                 
                 document.getElementById(`rsvpStep${stepNumber}`).classList.add('active');
                 
-                // Прокрутка к началу секции
                 document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });
             }
             
-            function playSuccessAnimation() {
-                // Анимация уже запускается через CSS
-            }
-            
-            // Обновление дедлайна
             function updateDeadlineCounter() {
-                // ИЗМЕНЕНИЕ 4: Меняем дату дедлайна на 20 марта 2026
                 const deadline = new Date('2026-03-20T23:59:59');
                 const now = new Date();
                 const diff = deadline - now;
@@ -4078,7 +3959,6 @@
                     document.getElementById('rsvpDeadlineDays').textContent = days;
                     document.getElementById('rsvpDeadlineHours').textContent = hours;
                 } else {
-                    // Дедлайн прошел
                     document.getElementById('rsvpDeadlineDays').textContent = '0';
                     document.getElementById('rsvpDeadlineHours').textContent = '0';
                     document.querySelector('.rsvp-deadline-banner').style.background = 'linear-gradient(135deg, rgba(255, 87, 87, 0.9), rgba(220, 53, 69, 0.9))';
@@ -4087,112 +3967,10 @@
             }
             
             updateDeadlineCounter();
-            setInterval(updateDeadlineCounter, 3600000); // Обновлять каждый час
+            setInterval(updateDeadlineCounter, 3600000);
         });
 
-        // ============= ORIGINAL JAVASCRIPT =============
-        // Music Consent Modal
-        const musicConsentModal = document.getElementById('musicConsentModal');
-        const consentContent = document.getElementById('consentContent');
-        const consentYes = document.getElementById('consentYes');
-        const consentNo = document.getElementById('consentNo');
-        const musicToggle = document.getElementById('musicToggle');
-        const weddingMusic = document.getElementById('weddingMusic');
-        let isPlaying = false;
-        
-        // Check if user has already made a choice
-        const musicConsent = localStorage.getItem('musicConsent');
-        
-        if (musicConsent === 'accepted') {
-            // User previously accepted music, start playing
-            musicConsentModal.classList.add('hidden');
-            setTimeout(() => {
-                startMusic();
-            }, 500);
-        } else if (musicConsent === 'declined') {
-            // User previously declined music, hide modal
-            musicConsentModal.classList.add('hidden');
-            musicToggle.innerHTML = '<i class="fas fa-play"></i>';
-            isPlaying = false;
-        } else {
-            // First time visitor, show modal after a short delay
-            setTimeout(() => {
-                musicConsentModal.classList.remove('hidden');
-                consentContent.classList.remove('hidden');
-            }, 1000);
-        }
-        
-        // Handle consent yes
-        consentYes.addEventListener('click', () => {
-            localStorage.setItem('musicConsent', 'accepted');
-            consentContent.classList.add('hidden');
-            setTimeout(() => {
-                musicConsentModal.classList.add('hidden');
-                startMusic();
-            }, 500);
-        });
-        
-        // Handle consent no
-        consentNo.addEventListener('click', () => {
-            localStorage.setItem('musicConsent', 'declined');
-            consentContent.classList.add('hidden');
-            setTimeout(() => {
-                musicConsentModal.classList.add('hidden');
-                musicToggle.innerHTML = '<i class="fas fa-play"></i>';
-                isPlaying = false;
-            }, 500);
-        });
-        
-        // Start music function
-        function startMusic() {
-            // Set volume to a reasonable level
-            weddingMusic.volume = 0.3;
-            
-            // Try to play music
-            weddingMusic.play().then(() => {
-                isPlaying = true;
-                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
-                console.log("Музыка успешно запущена");
-            }).catch(error => {
-                // If autoplay is blocked, show message and change icon
-                console.log("Автовоспроизведение заблокировано браузером:", error);
-                isPlaying = false;
-                musicToggle.innerHTML = '<i class="fas fa-play"></i>';
-                
-                // Show a subtle hint to the user
-                musicToggle.style.animation = 'pulse 1s 3';
-                setTimeout(() => {
-                    musicToggle.style.animation = '';
-                }, 3000);
-            });
-        }
-        
-        // Music toggle button
-        musicToggle.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent event bubbling
-            
-            if (isPlaying) {
-                weddingMusic.pause();
-                musicToggle.innerHTML = '<i class="fas fa-play"></i>';
-                isPlaying = false;
-            } else {
-                weddingMusic.play().then(() => {
-                    musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
-                    isPlaying = true;
-                }).catch(error => {
-                    console.log("Не удалось воспроизвести музыку:", error);
-                    alert("Не удалось воспроизвести музыку. Пожалуйста, проверьте настройки браузера.");
-                });
-            }
-            
-            // Add bounce animation
-            musicToggle.style.transform = 'scale(1.3)';
-            setTimeout(() => {
-                musicToggle.style.transform = 'scale(1)';
-            }, 300);
-        });
-
-        // Mobile Menu Toggle
+        // ============= MOBILE MENU =============
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const nav = document.querySelector('nav');
         
@@ -4203,7 +3981,7 @@
                 : '<i class="fas fa-bars"></i>';
         });
 
-        // Header Scroll Effect
+        // ============= HEADER SCROLL EFFECT =============
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             const scrolled = window.scrollY > 50;
@@ -4211,7 +3989,7 @@
             header.classList.toggle('scrolled', scrolled);
         });
 
-        // Countdown Timer with animation
+        // ============= COUNTDOWN =============
         function updateCountdown() {
             const weddingDate = new Date('June 05, 2026 16:00:00').getTime();
             const now = new Date().getTime();
@@ -4221,15 +3999,6 @@
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Add animation to countdown numbers
-            const countdownNumbers = document.querySelectorAll('.countdown-number');
-            countdownNumbers.forEach(el => {
-                el.style.transform = 'scale(1.2)';
-                setTimeout(() => {
-                    el.style.transform = 'scale(1)';
-                }, 200);
-            });
             
             document.getElementById('days').textContent = days.toString().padStart(2, '0');
             document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
@@ -4245,7 +4014,7 @@
         const countdownInterval = setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Scroll Animation for Sections
+        // ============= SCROLL ANIMATION =============
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -4256,7 +4025,6 @@
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                     
-                    // Special animation for timeline items
                     if (entry.target.id === 'timeline') {
                         const timelineItems = document.querySelectorAll('.timeline-item');
                         timelineItems.forEach((item, index) => {
@@ -4269,31 +4037,28 @@
             });
         }, observerOptions);
 
-        // Observe all sections
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
 
-        // FAQ Accordion with animation
+        // ============= FAQ ACCORDION =============
         const faqItems = document.querySelectorAll('.faq-item');
         
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             
             question.addEventListener('click', () => {
-                // Close all other items
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item && otherItem.classList.contains('active')) {
                         otherItem.classList.remove('active');
                     }
                 });
                 
-                // Toggle current item
                 item.classList.toggle('active');
             });
         });
 
-        // Яндекс Карты API
+        // ============= YANDEX MAPS =============
         function initializeYandexMap() {
             const mapElement = document.getElementById('map');
             if (!mapElement) {
@@ -4301,24 +4066,20 @@
                 return;
             }
             
-            // Проверяем, загружена ли библиотека Яндекс.Карт
             if (typeof ymaps === 'undefined') {
                 console.log('Yandex Maps API не загружена, пробуем еще раз через 1 секунду');
                 setTimeout(initializeYandexMap, 1000);
                 return;
             }
             
-            // Инициализируем карту
             ymaps.ready(function() {
                 try {
-                    // Создаем карту - ВАЖНО: [долгота, широта]
                     const myMap = new ymaps.Map('map', {
-                        center: [51.475359, 46.049779], // Координаты: [долгота, широта]
+                        center: [51.475359, 46.049779],
                         zoom: 15,
                         controls: ['zoomControl', 'fullscreenControl']
                     });
                     
-                    // Создаем метку - ВАЖНО: [долгота, широта]
                     const myPlacemark = new ymaps.Placemark([51.475359, 46.049779], {
                         balloonContent: `
                             <div style="padding: 15px; max-width: 250px;">
@@ -4340,15 +4101,12 @@
                             </div>
                         `
                     }, {
-                        // Стиль метки
                         preset: 'islands#redIcon',
                         iconColor: '#E9967A'
                     });
                     
-                    // Добавляем метку на карту
                     myMap.geoObjects.add(myPlacemark);
                     
-                    // Открываем балун при клике на метку
                     myPlacemark.events.add('click', function() {
                         myPlacemark.balloon.open();
                     });
@@ -4362,7 +4120,6 @@
             });
         }
 
-        // Фолбэк на случай ошибки
         function showFallbackMap() {
             const mapElement = document.getElementById('map');
             if (!mapElement) return;
@@ -4382,80 +4139,43 @@
             `;
         }
 
-        // Запускаем инициализацию карты после загрузки страницы
-        document.addEventListener('DOMContentLoaded', function() {
-            // Даем время на загрузку API
-            setTimeout(initializeYandexMap, 500);
-        });
-
-        // Также пытаемся инициализировать при полной загрузке страницы
+        setTimeout(initializeYandexMap, 500);
         window.addEventListener('load', function() {
             setTimeout(initializeYandexMap, 1000);
         });
 
-        // Initialize the page when it loads
-        window.addEventListener('DOMContentLoaded', () => {
-            // Add floating animation to logo
-            const logo = document.querySelector('.logo');
-            setInterval(() => {
-                logo.classList.toggle('floating');
-            }, 3000);
+        // ============= FLOATING HEARTS =============
+        function createFloatingHearts() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '♥';
+            heart.style.position = 'fixed';
+            heart.style.color = 'var(--accent-color)';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100vh';
+            heart.style.pointerEvents = 'none';
+            heart.style.zIndex = '9999';
+            heart.style.opacity = '0.7';
+            document.body.appendChild(heart);
             
-            // Add hover effect to all cards
-            const cards = document.querySelectorAll('.detail-card, .contact-card, .timeline-content, .dresscode-item');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-15px)';
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0)';
-                });
+            const animation = heart.animate([
+                { transform: 'translateY(0) rotate(0deg)', opacity: 0.7 },
+                { transform: `translateY(-${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+            ], {
+                duration: Math.random() * 3000 + 2000,
+                easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
             });
             
-            // Confetti effect on scroll to hero section
-            window.addEventListener('scroll', () => {
-                const heroSection = document.getElementById('hero');
-                const rect = heroSection.getBoundingClientRect();
-                
-                if (rect.top < 100 && rect.bottom > 100) {
-                    createFloatingHearts();
-                }
-            });
-            
-            function createFloatingHearts() {
-                const heart = document.createElement('div');
-                heart.innerHTML = '♥';
-                heart.style.position = 'fixed';
-                heart.style.color = 'var(--accent-color)';
-                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.top = '100vh';
-                heart.style.pointerEvents = 'none';
-                heart.style.zIndex = '9999';
-                heart.style.opacity = '0.7';
-                document.body.appendChild(heart);
-                
-                const animation = heart.animate([
-                    { transform: 'translateY(0) rotate(0deg)', opacity: 0.7 },
-                    { transform: `translateY(-${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
-                ], {
-                    duration: Math.random() * 3000 + 2000,
-                    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
-                });
-                
-                animation.onfinish = () => {
-                    heart.remove();
-                };
+            animation.onfinish = () => {
+                heart.remove();
+            };
+        }
+        
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                createFloatingHearts();
             }
-            
-            // Trigger hearts occasionally
-            setInterval(() => {
-                if (Math.random() > 0.7) {
-                    createFloatingHearts();
-                }
-            }, 3000);
-        });
+        }, 3000);
     </script>
 </body>
 </html>
