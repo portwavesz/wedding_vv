@@ -1546,6 +1546,7 @@
         }
 
         .rsvp-success-note {
+            margin-top: 25px;
             padding: 20px;
             background: rgba(255, 193, 7, 0.1);
             border-radius: 15px;
@@ -1787,7 +1788,7 @@
 
         /* ============= GALLERY ============= */
         #gallery {
-            background: #000;
+            background: var(--primary-color); /* Меняем черный на общий фон */
             padding: 120px 0;
         }
 
@@ -1805,14 +1806,14 @@
         .gallery-header h2 {
             font-family: 'Gravitas One', cursive;
             font-size: 3.2rem;
-            color: var(--light-color);
+            color: var(--accent-color); /* Меняем на акцентный цвет */
             font-weight: 400;
             margin-bottom: 20px;
         }
 
         .gallery-header p {
             font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-color); /* Меняем на цвет текста */
             max-width: 800px;
             margin: 0 auto;
         }
@@ -1820,7 +1821,7 @@
         .video-gallery-wrapper {
             position: relative;
             width: 100%;
-            height: 500px;
+            height: 600px;
             margin-bottom: 60px;
             overflow: hidden;
         }
@@ -1841,36 +1842,46 @@
             position: relative;
         }
         
-        .video-wrapper {
-            width: 100%;
+                .video-wrapper {
+            width: 90%;
             height: 100%;
             border-radius: 30px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             transition: all 0.5s ease;
             cursor: pointer;
-            opacity: 0.7;
-            transform: scale(0.85);
-        }
-        
-        .video-slide.active .video-wrapper {
-            width: 100%;
-            opacity: 1;
+            opacity: 0.8;
             transform: scale(1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 30px 60px rgba(233, 150, 122, 0.3);
-            z-index: 2;
+            margin: 0 auto;
+            background: transparent !important; /* Добавлено !important */
+            border: 1px solid rgba(255, 160, 122, 0.2);
+            }
+
+            .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            background: transparent !important; /* Добавлено !important */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
         
+
+                
         .video-slide.prev .video-wrapper,
         .video-slide.next .video-wrapper {
             position: absolute;
-            width: 40%;
+            width: 35%;
             height: 85%;
-            opacity: 0.7;
-            transform: scale(0.85);
+            opacity: 0.6;
+            transform: scale(1);
             z-index: 1;
+            border: none;
+            background: transparent !important; /* Добавлено !important */
         }
         
         .video-slide.prev .video-wrapper {
@@ -1881,15 +1892,8 @@
             right: 0;
         }
         
-        .video-wrapper video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
         .video-wrapper:hover video {
-            transform: scale(1.05);
+            transform: scale(1);
         }
         
         .play-overlay {
@@ -1935,38 +1939,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .video-info {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
-            right: 30px;
-            text-align: left;
-            color: white;
-            z-index: 4;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease 0.3s;
-            pointer-events: none;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .video-slide.active .video-info {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .video-info h4 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            font-family: 'Gravitas One', cursive;
-        }
-
-        .video-info p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 80%;
-        }
-
         .slide-indicators {
             display: flex;
             justify-content: center;
@@ -1986,7 +1958,7 @@
         
         .indicator:hover .circle-indicator {
             transform: scale(1.2);
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: var(--accent-color);
         }
         
         .indicator.active .circle-indicator {
@@ -1997,14 +1969,14 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(233, 150, 122, 0.3);
             transition: all 0.3s;
         }
         
         .progress-indicator {
             width: 100px;
             height: 4px;
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(233, 150, 122, 0.3);
             border-radius: 2px;
             overflow: hidden;
         }
@@ -2028,7 +2000,7 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--accent-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2038,11 +2010,11 @@
             backdrop-filter: blur(10px);
             z-index: 10;
             position: relative;
+            color: white;
         }
         
         .nav-button:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
+            background-color: var(--secondary-color);
             transform: scale(1.1);
             box-shadow: 0 10px 30px rgba(233, 150, 122, 0.3);
         }
@@ -2282,48 +2254,57 @@
             margin-top: 10px;
         }
 
-        /* ============= YANDEX MUSIC PLAYER ============= */
-        .yandex-music-player {
+        /* ============= MUSIC PLAYER ============= */
+        .music-player {
             position: fixed;
             bottom: 30px;
             right: 30px;
             z-index: 1000;
-            background: transparent;
+        }
+
+        .music-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
             box-shadow: 0 8px 25px rgba(233, 150, 122, 0.5);
-            border-radius: 40px;
-            transition: all 0.3s ease;
-        }
-
-        .yandex-music-player:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 30px rgba(233, 150, 122, 0.7);
-        }
-
-        .yandex-music-player iframe {
+            transition: var(--transition);
             border: none;
-            width: 300px;
-            height: 80px;
-            border-radius: 40px;
+            font-size: 1.8rem;
+            position: relative;
             overflow: hidden;
         }
 
-        @media (max-width: 768px) {
-            .yandex-music-player {
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .yandex-music-player iframe {
-                width: 250px !important;
-                height: 70px !important;
-            }
+        .music-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(233, 150, 122, 0.8);
+            border-radius: 50%;
+            transform: scale(0);
+            transition: transform 0.5s ease;
         }
 
-        @media (max-width: 480px) {
-            .yandex-music-player iframe {
-                width: 200px !important;
-                height: 60px !important;
-            }
+        .music-btn:hover:before {
+            transform: scale(1);
+        }
+
+        .music-btn i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 12px 30px rgba(233, 150, 122, 0.7);
         }
 
         /* ============= ANIMATIONS ============= */
@@ -2548,7 +2529,7 @@
             }
             
             .video-gallery-wrapper {
-                height: 350px;
+                height: 400px;
                 margin-bottom: 40px;
             }
             
@@ -2556,6 +2537,7 @@
                 bottom: 20px;
                 left: 20px;
                 right: 20px;
+                display: none;
             }
             
             .video-info h4 {
@@ -2684,11 +2666,16 @@
             }
             
             .video-gallery-wrapper {
-                height: 250px;
+                height: 300px;
             }
             
             .video-wrapper {
                 border-radius: 20px;
+            }
+            
+            .video-slide.prev .video-wrapper,
+            .video-slide.next .video-wrapper {
+                width: 35%;
             }
             
             .progress-indicator {
@@ -2741,6 +2728,12 @@
                 gap: 20px;
             }
             
+            .music-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
             .map-container {
                 height: 300px;
                 margin-top: 30px;
@@ -2782,16 +2775,16 @@
         </div>
     </div>
 
-    <!-- Music Consent Modal (больше не нужен для iframe, но оставляем для согласия на автоскролл) -->
+    <!-- Music Consent Modal -->
     <div class="music-consent-modal" id="musicConsentModal">
         <div class="consent-content" id="consentContent">
             <div class="consent-icon">
                 <i class="fas fa-music"></i>
             </div>
             <h3>Музыкальное сопровождение</h3>
-            <p>Хотите включить фоновую музыку для создания атмосферы?</p>
+            <p>Хотите включить фоновую музыку для создания атмосферы? Музыка начнет играть сразу после вашего согласия.</p>
             <div class="consent-buttons">
-                <button class="consent-btn yes" id="consentYes">Да, включить</button>
+                <button class="consent-btn yes" id="consentYes">Да, включить музыку</button>
                 <button class="consent-btn no" id="consentNo">Нет, спасибо</button>
             </div>
         </div>
@@ -2991,10 +2984,6 @@
                             <h4>76513F</h4>
                             <p>#76513F<br>Насыщенный коричневый</p>
                         </div>
-                    </div>
-                    
-                    <div class="dresscode-note">
-                        <p><i class="fas fa-lightbulb"></i> Вы можете выбрать любой из предложенных цветов или их сочетание.</p>
                     </div>
                 </div>
             </div>
@@ -3309,7 +3298,7 @@
         <div class="gallery-container">
             <div class="gallery-header">
                 <h2>Живые воспоминания</h2>
-                <p>Окунитесь в самые тёплые и живые моменты нашей истории. Кликните на любое видео, чтобы сделать его центральным</p>
+                <p>Окунитесь в самые тёплые и живые моменты нашей истории</p>
             </div>
             
             <div class="video-gallery-wrapper">
@@ -3346,34 +3335,27 @@
                         <i class="fas fa-chevron-down faq-toggle"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Мы будем рады видеть всех наших гостей, включая детей! Для маленьких гостей мы подготовим отдельный стол с угощениями и развлечениями.</p>
+                        <p>Мы будем рады всем членам вашей семьи, но окончательное решение приходить с детьми или без остается за вами.</p>
                     </div>
                 </div>
+                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Как добраться на общественном транспорте?</span>
+                        <span>Что вам дарить? Можно ли дарить цветы?</span>
                         <i class="fas fa-chevron-down faq-toggle"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Ближайшая станция метро - "Свадебная" (5 минут пешком). Также можно доехать на автобусах №15, 47, 102 до остановки "Ресторан Белая Вежа".</p>
+                        <p>Дорогие гости, ваше присутствие — самый главный подарок для нас! Если вы хотите сделать подарок, мы с благодарностью примем конверт — это поможет нам в создании нашего семейного уюта. А цветы, пожалуйста, не дарите — мы улетаем в отпуск на следующий день после свадьбы и не сможем их забрать с собой.</p>
                     </div>
                 </div>
+                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Будет ли трансфер?</span>
+                        <span>Обязателен ли дресс-код?</span>
                         <i class="fas fa-chevron-down faq-toggle"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Да, для гостей будет организован трансфер от станции метро "Свадебная" до места проведения мероприятия. Трансфер будет курсировать с 15:30 до 16:30.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Что вам дарить?</span>
-                        <i class="fas fa-chevron-down faq-toggle"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Ваше присутствие - уже самый лучший подарок! Если вы все же хотите нас порадовать, мы будем благодарны за вклад в наше совместное будущее или вы можете выбрать подарок из нашего свадебного списка.</p>
+                        <p>Мы будем очень благодарны, если вы поддержите выбранную нами цветовую гамму, так как этот день очень важен для нас</p>
                     </div>
                 </div>
             </div>
@@ -3433,9 +3415,15 @@
         </div>
     </footer>
 
-    <!-- Яндекс.Музыка плеер (исправленная версия) -->
-    <div class="yandex-music-player">
-<iframe frameborder="0" allow="clipboard-write" style="border:none;width:614px;height:244px;" width="614" height="244" src="https://music.yandex.ru/#iframe/album/158918/track/1578662">Слушайте <a href="https://music.yandex.ru/album/158918/track/1578662?utm_source=web&utm_medium=copy_link">Dust</a> — <a href="https://music.yandex.ru/artist/283018">Andrew Morris</a> на Яндекс Музыке</iframe>
+    <!-- Music Player -->
+    <div class="music-player">
+        <button class="music-btn" id="musicToggle">
+            <i class="fas fa-pause"></i>
+        </button>
+        <audio id="weddingMusic" loop>
+            <source src="Andrew Morris - Dust.mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио элемент.
+        </audio>
     </div>
 
     <script>
@@ -3445,7 +3433,6 @@
             
             setTimeout(function() {
                 if (initialLoad && !initialLoad.classList.contains('hidden')) {
-                    console.log('Скрываем лоадер по таймауту');
                     initialLoad.classList.add('hidden');
                     document.body.classList.remove('prevent-scroll');
                     document.body.style.overflow = '';
@@ -3454,7 +3441,6 @@
             }, 3000);
             
             window.addEventListener('load', function() {
-                console.log('Страница полностью загружена');
                 setTimeout(() => {
                     if (initialLoad) {
                         initialLoad.classList.add('hidden');
@@ -3476,51 +3462,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('img').forEach(img => {
                 img.addEventListener('error', function(e) {
-                    console.warn('Ошибка загрузки WebP изображения:', this.src);
-                    
                     const jpgSrc = this.src.replace('.webp', '.jpg');
                     if (jpgSrc !== this.src) {
-                        console.log('Пробуем загрузить JPG вместо WebP:', jpgSrc);
                         this.src = jpgSrc;
                     }
                 });
             });
-        });
-
-        // ============= MUSIC CONSENT MODAL =============
-        const musicConsentModal = document.getElementById('musicConsentModal');
-        const consentContent = document.getElementById('consentContent');
-        const consentYes = document.getElementById('consentYes');
-        const consentNo = document.getElementById('consentNo');
-        
-        // Check if user has already made a choice
-        const musicConsent = localStorage.getItem('musicConsent');
-        
-        if (musicConsent === 'accepted' || musicConsent === 'declined') {
-            musicConsentModal.classList.add('hidden');
-        } else {
-            setTimeout(() => {
-                musicConsentModal.classList.remove('hidden');
-                consentContent.classList.remove('hidden');
-            }, 1000);
-        }
-        
-        // Handle consent yes
-        consentYes.addEventListener('click', () => {
-            localStorage.setItem('musicConsent', 'accepted');
-            consentContent.classList.add('hidden');
-            setTimeout(() => {
-                musicConsentModal.classList.add('hidden');
-            }, 500);
-        });
-        
-        // Handle consent no
-        consentNo.addEventListener('click', () => {
-            localStorage.setItem('musicConsent', 'declined');
-            consentContent.classList.add('hidden');
-            setTimeout(() => {
-                musicConsentModal.classList.add('hidden');
-            }, 500);
         });
 
         // ============= ВИДЕОКАРУСЕЛЬ =============
@@ -3534,31 +3481,31 @@
                 {
                     title: "Наше первое знакомство",
                     description: "Случайная встреча в кофейне, изменившая нашу жизнь навсегда",
-                    src: "vid1.mp4",
+                    src: "vid7.mp4",
                     poster: "vladislav-viktoria-1.webp"
                 },
                 {
                     title: "Путешествие в горы",
                     description: "Тот самый момент, когда прозвучало предложение руки и сердца",
-                    src: "vid2.mp4",
+                    src: "vid4.mp4",
                     poster: "vladislav-viktoria-8.webp"
                 },
                 {
                     title: "Подготовка к свадьбе",
                     description: "Волнующие моменты подготовки к самому важному дню",
-                    src: "vid3.mp4",
+                    src: "vid8.mp4",
                     poster: "vladislav-viktoria-5.webp"
                 },
                 {
                     title: "Наши друзья",
                     description: "Люди, которые всегда были рядом и поддерживали нас",
-                    src: "vid1.mp4",
+                    src: "vid5.mp4",
                     poster: "vladislav-viktoria-3.webp"
                 },
                 {
                     title: "Мечты о будущем",
                     description: "Наши планы и мечты о совместной жизни",
-                    src: "vid3.mp4",
+                    src: "vid6.mp4",
                     poster: "vladislav-viktoria-1.webp"
                 }
             ];
@@ -3567,12 +3514,14 @@
             const totalSlides = videos.length;
             let videoElements = [];
             let progressInterval;
+            let autoPlayTimer = null;
+            let isUserInteracting = false;
             
             function initCarousel() {
                 createVideoSlides();
                 createIndicators();
                 updateCarousel();
-                startProgressBar();
+                startAutoPlay();
             }
             
             function createVideoSlides() {
@@ -3591,24 +3540,41 @@
                     video.src = videos[i].src;
                     video.poster = videos[i].poster;
                     video.preload = "metadata";
+                    video.playsInline = true;
+                    video.muted = true; // Отключаем звук для всех видео
                     
                     video.addEventListener('error', function(e) {
-                        console.error('Ошибка загрузки видео:', videos[i].title, e);
                         videoWrapper.style.backgroundImage = `url('${videos[i].poster}')`;
                         videoWrapper.style.backgroundSize = 'cover';
                         videoWrapper.style.backgroundPosition = 'center';
                         video.style.display = 'none';
                     });
                     
-                    video.addEventListener('loadeddata', function() {
-                        if (video.poster && video.poster.includes('.webp')) {
-                            const img = new Image();
-                            img.onerror = function() {
-                                const jpgPoster = video.poster.replace('.webp', '.jpg');
-                                console.log('WebP не загрузился, пробуем JPG:', jpgPoster);
-                                video.poster = jpgPoster;
-                            };
-                            img.src = video.poster;
+                    video.addEventListener('loadedmetadata', function() {
+                        console.log(`Видео ${i} загружено, длительность: ${video.duration}с`);
+                    });
+                    
+                    video.addEventListener('timeupdate', function() {
+                        if (i === currentSlide && !isUserInteracting) {
+                            updateProgressBarFromVideo(video);
+                        }
+                    });
+                    
+                    video.addEventListener('ended', function() {
+                        if (i === currentSlide) {
+                            nextSlide();
+                        }
+                    });
+                    
+                    video.addEventListener('pause', function() {
+                        if (i === currentSlide) {
+                            updatePlayIcon(video, playOverlay);
+                        }
+                    });
+                    
+                    video.addEventListener('play', function() {
+                        if (i === currentSlide) {
+                            updatePlayIcon(video, playOverlay);
                         }
                     });
                     
@@ -3629,13 +3595,12 @@
                     `;
                     
                     slide.appendChild(videoWrapper);
-                    slide.appendChild(videoInfo);
                     videoContainer.appendChild(slide);
                     
                     videoWrapper.addEventListener('click', (e) => {
                         e.stopPropagation();
                         if (i === currentSlide) {
-                            toggleVideoPlayback(video, playOverlay);
+                            toggleVideoPlayback(video);
                         } else {
                             goToSlide(i);
                         }
@@ -3651,6 +3616,13 @@
                             video.msRequestFullscreen();
                         }
                     });
+                }
+            }
+            
+            function updatePlayIcon(video, overlay) {
+                const icon = overlay.querySelector('.play-icon i');
+                if (icon) {
+                    icon.className = video.paused ? 'fas fa-play' : 'fas fa-pause';
                 }
             }
             
@@ -3681,9 +3653,8 @@
                 slides.forEach(slide => {
                     slide.classList.remove('active', 'prev', 'next');
                     const video = slide.querySelector('video');
-                    if (video) {
+                    if (video && !video.paused) {
                         video.pause();
-                        video.currentTime = 0;
                     }
                 });
                 
@@ -3701,8 +3672,9 @@
                     
                     const video = currentSlideElement.querySelector('video');
                     if (video) {
+                        video.currentTime = 0;
                         video.play().catch(e => {
-                            console.log('Автовоспроизведение заблокировано:', e);
+                            updatePlayIcon(video, currentSlideElement.querySelector('.play-overlay'));
                         });
                     }
                 }
@@ -3733,68 +3705,114 @@
                     progressIndicator.appendChild(progressBar);
                     currentIndicator.appendChild(progressIndicator);
                     
-                    startProgressBar();
+                    resetProgressBar();
                 }
                 
                 videoContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
             }
             
+            function updateProgressBarFromVideo(video) {
+                const progressBar = document.getElementById('activeProgressBar');
+                if (!progressBar || !video || video.paused || isUserInteracting) return;
+                
+                if (video.duration && !isNaN(video.duration)) {
+                    const percent = (video.currentTime / video.duration) * 100;
+                    progressBar.style.width = percent + '%';
+                }
+            }
+            
+            function resetProgressBar() {
+                const progressBar = document.getElementById('activeProgressBar');
+                if (progressBar) {
+                    progressBar.style.width = '0%';
+                }
+            }
+            
             function goToSlide(slideIndex) {
                 if (slideIndex === currentSlide) return;
                 
+                isUserInteracting = true;
+                clearTimeout(autoPlayTimer);
+                
                 currentSlide = slideIndex;
                 updateCarousel();
-                startProgressBar();
+                
+                setTimeout(() => {
+                    isUserInteracting = false;
+                    startAutoPlay();
+                }, 500);
             }
             
-            function toggleVideoPlayback(video, playOverlay) {
-                const playIcon = playOverlay.querySelector('.play-icon i');
+            function nextSlide() {
+                const next = (currentSlide + 1) % totalSlides;
+                goToSlide(next);
+            }
+            
+            function prevSlide() {
+                const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+                goToSlide(prev);
+            }
+            
+            function toggleVideoPlayback(video) {
                 if (video.paused) {
                     video.play();
-                    playIcon.className = 'fas fa-pause';
+                    isUserInteracting = false;
+                    clearTimeout(autoPlayTimer);
+                    startAutoPlay();
                 } else {
                     video.pause();
-                    playIcon.className = 'fas fa-play';
+                    isUserInteracting = true;
+                    clearTimeout(autoPlayTimer);
                 }
             }
             
-            function startProgressBar() {
-                stopProgressBar();
+            function startAutoPlay() {
+                clearTimeout(autoPlayTimer);
                 
-                const progressBar = document.getElementById('activeProgressBar');
-                if (!progressBar) return;
+                if (isUserInteracting) return;
                 
-                let width = 0;
-                const duration = 10000;
-                const interval = 100;
-                const increment = (interval / duration) * 100;
+                const currentVideo = videoElements[currentSlide];
+                if (!currentVideo) return;
                 
-                progressInterval = setInterval(() => {
-                    width += increment;
-                    progressBar.style.width = width + '%';
+                if (currentVideo.paused) {
+                    currentVideo.play().catch(() => {});
+                    return;
+                }
+                
+                const checkProgress = () => {
+                    if (isUserInteracting) return;
                     
-                    if (width >= 100) {
-                        stopProgressBar();
-                        const nextSlide = (currentSlide + 1) % totalSlides;
-                        goToSlide(nextSlide);
+                    if (currentVideo.duration && !isNaN(currentVideo.duration)) {
+                        const timeLeft = (currentVideo.duration - currentVideo.currentTime) * 1000;
+                        
+                        if (timeLeft > 0 && timeLeft < 30000) {
+                            clearTimeout(autoPlayTimer);
+                            autoPlayTimer = setTimeout(() => {
+                                if (!isUserInteracting && !currentVideo.paused) {
+                                    nextSlide();
+                                }
+                            }, timeLeft);
+                        }
                     }
-                }, interval);
+                };
+                
+                checkProgress();
+                
+                currentVideo.addEventListener('timeupdate', checkProgress, { once: true });
             }
             
-            function stopProgressBar() {
-                if (progressInterval) {
-                    clearInterval(progressInterval);
-                }
+            function stopAutoPlay() {
+                clearTimeout(autoPlayTimer);
             }
             
             prevButton.addEventListener('click', () => {
-                const prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                goToSlide(prevSlide);
+                stopAutoPlay();
+                prevSlide();
             });
             
             nextButton.addEventListener('click', () => {
-                const nextSlide = (currentSlide + 1) % totalSlides;
-                goToSlide(nextSlide);
+                stopAutoPlay();
+                nextSlide();
             });
             
             let touchStartX = 0;
@@ -3802,12 +3820,17 @@
             
             videoContainer.addEventListener('touchstart', (e) => {
                 touchStartX = e.touches[0].clientX;
-                stopProgressBar();
+                stopAutoPlay();
+                isUserInteracting = true;
             }, { passive: true });
             
             videoContainer.addEventListener('touchend', (e) => {
                 touchEndX = e.changedTouches[0].clientX;
                 handleSwipe();
+                setTimeout(() => {
+                    isUserInteracting = false;
+                    startAutoPlay();
+                }, 500);
             }, { passive: true });
             
             function handleSwipe() {
@@ -3816,11 +3839,9 @@
                 
                 if (Math.abs(diff) > swipeThreshold) {
                     if (diff > 0) {
-                        const nextSlide = (currentSlide + 1) % totalSlides;
-                        goToSlide(nextSlide);
+                        nextSlide();
                     } else {
-                        const prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                        goToSlide(prevSlide);
+                        prevSlide();
                     }
                 }
             }
@@ -3828,34 +3849,42 @@
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowLeft') {
                     e.preventDefault();
-                    const prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                    goToSlide(prevSlide);
+                    stopAutoPlay();
+                    isUserInteracting = true;
+                    prevSlide();
+                    setTimeout(() => {
+                        isUserInteracting = false;
+                        startAutoPlay();
+                    }, 500);
                 } else if (e.key === 'ArrowRight') {
                     e.preventDefault();
-                    const nextSlide = (currentSlide + 1) % totalSlides;
-                    goToSlide(nextSlide);
+                    stopAutoPlay();
+                    isUserInteracting = true;
+                    nextSlide();
+                    setTimeout(() => {
+                        isUserInteracting = false;
+                        startAutoPlay();
+                    }, 500);
                 } else if (e.key === ' ' || e.key === 'Spacebar') {
                     e.preventDefault();
-                    const currentSlideElement = document.querySelector('.video-slide.active');
-                    if (currentSlideElement) {
-                        const video = currentSlideElement.querySelector('video');
-                        const playOverlay = currentSlideElement.querySelector('.play-overlay');
-                        if (video && playOverlay) {
-                            toggleVideoPlayback(video, playOverlay);
-                        }
+                    const currentVideo = videoElements[currentSlide];
+                    if (currentVideo) {
+                        toggleVideoPlayback(currentVideo);
                     }
                 }
             });
             
-            initCarousel();
-            
             videoContainer.addEventListener('mouseenter', () => {
-                stopProgressBar();
+                stopAutoPlay();
             });
             
             videoContainer.addEventListener('mouseleave', () => {
-                startProgressBar();
+                if (!isUserInteracting) {
+                    startAutoPlay();
+                }
             });
+            
+            initCarousel();
         });
 
         // ============= RSVP FLOW LOGIC =============
@@ -3943,7 +3972,6 @@
                 });
                 
                 document.getElementById(`rsvpStep${stepNumber}`).classList.add('active');
-                
                 document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });
             }
             
@@ -3970,6 +3998,91 @@
             setInterval(updateDeadlineCounter, 3600000);
         });
 
+        // ============= MUSIC CONSENT =============
+        const musicConsentModal = document.getElementById('musicConsentModal');
+        const consentContent = document.getElementById('consentContent');
+        const consentYes = document.getElementById('consentYes');
+        const consentNo = document.getElementById('consentNo');
+        const musicToggle = document.getElementById('musicToggle');
+        const weddingMusic = document.getElementById('weddingMusic');
+        let isPlaying = false;
+        
+        const musicConsent = localStorage.getItem('musicConsent');
+        
+        if (musicConsent === 'accepted') {
+            musicConsentModal.classList.add('hidden');
+            setTimeout(() => {
+                startMusic();
+            }, 500);
+        } else if (musicConsent === 'declined') {
+            musicConsentModal.classList.add('hidden');
+            musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+            isPlaying = false;
+        } else {
+            setTimeout(() => {
+                musicConsentModal.classList.remove('hidden');
+                consentContent.classList.remove('hidden');
+            }, 1000);
+        }
+        
+        consentYes.addEventListener('click', () => {
+            localStorage.setItem('musicConsent', 'accepted');
+            consentContent.classList.add('hidden');
+            setTimeout(() => {
+                musicConsentModal.classList.add('hidden');
+                startMusic();
+            }, 500);
+        });
+        
+        consentNo.addEventListener('click', () => {
+            localStorage.setItem('musicConsent', 'declined');
+            consentContent.classList.add('hidden');
+            setTimeout(() => {
+                musicConsentModal.classList.add('hidden');
+                musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+                isPlaying = false;
+            }, 500);
+        });
+        
+        function startMusic() {
+            weddingMusic.volume = 0.3;
+            
+            weddingMusic.play().then(() => {
+                isPlaying = true;
+                musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+            }).catch(error => {
+                isPlaying = false;
+                musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+                
+                musicToggle.style.animation = 'pulse 1s 3';
+                setTimeout(() => {
+                    musicToggle.style.animation = '';
+                }, 3000);
+            });
+        }
+        
+        musicToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            if (isPlaying) {
+                weddingMusic.pause();
+                musicToggle.innerHTML = '<i class="fas fa-play"></i>';
+                isPlaying = false;
+            } else {
+                weddingMusic.play().then(() => {
+                    musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+                    isPlaying = true;
+                }).catch(error => {
+                    alert("Не удалось воспроизвести музыку. Пожалуйста, проверьте настройки браузера.");
+                });
+            }
+            
+            musicToggle.style.transform = 'scale(1.3)';
+            setTimeout(() => {
+                musicToggle.style.transform = 'scale(1)';
+            }, 300);
+        });
+
         // ============= MOBILE MENU =============
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const nav = document.querySelector('nav');
@@ -3981,11 +4094,10 @@
                 : '<i class="fas fa-bars"></i>';
         });
 
-        // ============= HEADER SCROLL EFFECT =============
+        // ============= HEADER SCROLL =============
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             const scrolled = window.scrollY > 50;
-            
             header.classList.toggle('scrolled', scrolled);
         });
 
@@ -3999,6 +4111,14 @@
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            const countdownNumbers = document.querySelectorAll('.countdown-number');
+            countdownNumbers.forEach(el => {
+                el.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    el.style.transform = 'scale(1)';
+                }, 200);
+            });
             
             document.getElementById('days').textContent = days.toString().padStart(2, '0');
             document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
@@ -4061,13 +4181,9 @@
         // ============= YANDEX MAPS =============
         function initializeYandexMap() {
             const mapElement = document.getElementById('map');
-            if (!mapElement) {
-                console.log('Элемент карты не найден');
-                return;
-            }
+            if (!mapElement) return;
             
             if (typeof ymaps === 'undefined') {
-                console.log('Yandex Maps API не загружена, пробуем еще раз через 1 секунду');
                 setTimeout(initializeYandexMap, 1000);
                 return;
             }
@@ -4111,10 +4227,7 @@
                         myPlacemark.balloon.open();
                     });
                     
-                    console.log('Яндекс.Карта успешно загружена!');
-                    
                 } catch (error) {
-                    console.error('Ошибка при создании карты:', error);
                     showFallbackMap();
                 }
             });
@@ -4140,42 +4253,55 @@
         }
 
         setTimeout(initializeYandexMap, 500);
-        window.addEventListener('load', function() {
-            setTimeout(initializeYandexMap, 1000);
-        });
 
         // ============= FLOATING HEARTS =============
-        function createFloatingHearts() {
-            const heart = document.createElement('div');
-            heart.innerHTML = '♥';
-            heart.style.position = 'fixed';
-            heart.style.color = 'var(--accent-color)';
-            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.top = '100vh';
-            heart.style.pointerEvents = 'none';
-            heart.style.zIndex = '9999';
-            heart.style.opacity = '0.7';
-            document.body.appendChild(heart);
+        window.addEventListener('DOMContentLoaded', () => {
+            const logo = document.querySelector('.logo');
+            setInterval(() => {
+                logo.classList.toggle('floating');
+            }, 3000);
             
-            const animation = heart.animate([
-                { transform: 'translateY(0) rotate(0deg)', opacity: 0.7 },
-                { transform: `translateY(-${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
-            ], {
-                duration: Math.random() * 3000 + 2000,
-                easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+            window.addEventListener('scroll', () => {
+                const heroSection = document.getElementById('hero');
+                const rect = heroSection.getBoundingClientRect();
+                
+                if (rect.top < 100 && rect.bottom > 100) {
+                    createFloatingHearts();
+                }
             });
             
-            animation.onfinish = () => {
-                heart.remove();
-            };
-        }
-        
-        setInterval(() => {
-            if (Math.random() > 0.7) {
-                createFloatingHearts();
+            function createFloatingHearts() {
+                const heart = document.createElement('div');
+                heart.innerHTML = '♥';
+                heart.style.position = 'fixed';
+                heart.style.color = 'var(--accent-color)';
+                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = '100vh';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '9999';
+                heart.style.opacity = '0.7';
+                document.body.appendChild(heart);
+                
+                const animation = heart.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 0.7 },
+                    { transform: `translateY(-${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                });
+                
+                animation.onfinish = () => {
+                    heart.remove();
+                };
             }
-        }, 3000);
+            
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    createFloatingHearts();
+                }
+            }, 3000);
+        });
     </script>
 </body>
 </html>
