@@ -963,7 +963,8 @@
         @media (max-width: 768px) {
             .dresscode-card h3,
             .dresscode-card p,
-            .dresscode-note p {
+            .dresscode-note p,
+            .dresscode-title-text { 
                 font-style: normal;
             }
             
@@ -2621,9 +2622,19 @@
                 margin-top: 30px;
             }
 
+            /* Убираем курсив в FAQ на мобильных */
             .faq-question,
-            .faq-answer {
-                font-style: normal;
+            .faq-answer,
+            .faq-question span,
+            .faq-answer p {
+                font-style: normal !important;
+            }
+
+            /* Убираем курсив в Dress Code на мобильных (дублируем для надежности) */
+            .dresscode-title-text,
+            .dresscode-card p,
+            .dresscode-note p {
+                font-style: normal !important;
             }
         }
 
@@ -2759,9 +2770,23 @@
                 margin-bottom: 20px;
             }
             
-            .footer-bottom {
+            .footer-bottom { 
                 padding-top: 15px;
                 margin-top: 15px;
+            }
+
+            /* Убедимся, что стили для FAQ и Dress Code применяются и на 576px */
+            .faq-question,
+            .faq-answer,
+            .faq-question span,
+            .faq-answer p {
+                font-style: normal !important;
+            }
+            
+            .dresscode-title-text,
+            .dresscode-card p,
+            .dresscode-note p {
+                font-style: normal !important;
             }
         }
     </style>
@@ -2968,9 +2993,9 @@
                         </div>
 
                         <div class="dresscode-item">
-                            <div class="color-circle" style="background-color: #E9967A;" data-color="#E9967A"></div>
+                            <div class="color-circle" style="background-color: #FBEAD9;" data-color="#E9967A"></div>
                             <h4>Dark Salmon</h4>
-                            <p>#E9967A<br>Темный лососевый</p>
+                            <p>#FBEAD9<br>Темный лососевый</p>
                         </div>
                         
                         <div class="dresscode-item">
@@ -3407,10 +3432,7 @@
                 <div class="footer-hearts">♥ ♥ ♥</div>
                 <p class="footer-message">Ваше присутствие сделает наш день по-настоящему особенным и незабываемым.</p>
                 
-                <div class="footer-bottom">
-                    <p>С любовью, Владислав и Виктория © 2024</p>
-                    <p class="footer-date">05 июня 2026 года</p>
-                </div>
+                
             </div>
         </div>
     </footer>
