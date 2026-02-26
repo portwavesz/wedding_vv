@@ -2780,6 +2780,39 @@
                 }
 
 
+                            /* ============= ЖЕСТКИЙ ФИКС ДЛЯ TELEGRAM ============= */
+            @supports (-webkit-touch-callout: none) {
+            /* Отключаем плавный скролл ТОЛЬКО для мобил */
+            html {
+                scroll-behavior: auto !important;
+            }
+            
+            /* Убираем размытие на хедере в Telegram */
+            header {
+                -webkit-backdrop-filter: none !important;
+                backdrop-filter: none !important;
+                background: var(--secondary-color) !important;
+            }
+            
+            /* Замораживаем трансформации во время скролла */
+            .hero-live-video,
+            .video-wrapper video,
+            .floating,
+            .pulse {
+                transition: none !important;
+                animation: none !important;
+                transform: none !important;
+            }
+            
+            /* Оптимизация скролла */
+            body, html {
+                -webkit-overflow-scrolling: touch !important;
+                overflow-scrolling: touch !important;
+                height: 100%;
+            }
+            }
+
+
     </style>
 </head>
 </head>
