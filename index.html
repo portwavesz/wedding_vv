@@ -2750,6 +2750,35 @@
                 font-style: normal !important;
             }
         }
+
+
+        /* ФИКС ДЛЯ TELEGRAM */
+        .hero-live-video,
+        .video-wrapper video {
+            -webkit-overflow-scrolling: touch !important;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000;
+        }
+
+        html, body {
+            -webkit-overflow-scrolling: touch !important;
+            overflow-scrolling: touch !important;
+        }
+
+        /* Отключаем тяжелые анимации при скролле */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        section {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+
+
+
     </style>
 </head>
 </head>
