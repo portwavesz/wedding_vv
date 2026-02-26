@@ -2,8 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Владислав и Виктория | Свадьба 05.06.2026</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,10 +33,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            animation-duration: 0s !important;
+            transition-duration: 0s !important;
         }
 
         html {
-            scroll-behavior: auto;
+            scroll-behavior: auto !important;
         }
 
         body {
@@ -42,6 +47,9 @@
             color: var(--text-color);
             background-color: var(--primary-color);
             overflow-x: hidden;
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch !important;
         }
 
         .container {
@@ -188,12 +196,13 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--secondary-color);
-            backdrop-filter: blur(10px);
+            background: var(--secondary-color) !important;
             z-index: 1000;
             transition: var(--transition);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
             padding: 0;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
         }
 
         .header-bg {
@@ -209,7 +218,7 @@
 
         header.scrolled {
             padding: 0;
-            background: var(--secondary-color);
+            background: var(--secondary-color) !important;
         }
 
         .header-container {
@@ -642,8 +651,7 @@
         }
 
         .detail-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: none !important;
         }
 
         .detail-icon {
@@ -2557,7 +2565,7 @@
             }
             
             .rsvp-step-hint {
-                font-style: italic; /* Оставляем курсив только для подсказки, если нужно */
+                font-style: italic;
             }
             
             .contacts-container {
@@ -2582,7 +2590,6 @@
                 margin-top: 30px;
             }
 
-            /* Убираем курсив в FAQ на мобильных */
             .faq-question,
             .faq-question span,
             .faq-answer,
@@ -2590,7 +2597,6 @@
                 font-style: normal !important;
             }
 
-            /* Убираем курсив в Dress Code на мобильных */
             .dresscode-title-text,
             .dresscode-card p,
             .dresscode-note p {
@@ -2735,7 +2741,6 @@
                 margin-top: 15px;
             }
 
-            /* Убираем курсив в FAQ на мобильных */
             .faq-question,
             .faq-question span,
             .faq-answer,
@@ -2743,7 +2748,6 @@
                 font-style: normal !important;
             }
 
-            /* Убираем курсив в Dress Code на мобильных */
             .dresscode-title-text,
             .dresscode-card p,
             .dresscode-note p {
@@ -2751,50 +2755,14 @@
             }
         }
 
-
-            /* ФИКС ДЛЯ TELEGRAM */
-            body.tg-fix {
-                overscroll-behavior: contain;
-                position: fixed;
-                width: 100%;
+        /* ============= ЖЕСТКИЙ ФИКС ДЛЯ TELEGRAM ============= */
+        @supports (-webkit-touch-callout: none) {
+            html, body {
+                -webkit-overflow-scrolling: touch !important;
+                overflow-scrolling: touch !important;
                 height: 100%;
-                overflow: hidden;
             }
 
-            #telegram-scroll-container {
-                height: 100vh;
-                overflow-y: auto;
-                -webkit-overflow-scrolling: touch;
-                overscroll-behavior: contain;
-            }
-
-                    html,body {
-                -webkit-overflow-scrolling: touch; /* Включает нативную инерцию для скролла */
-                 overflow-scrolling: touch;
-        }
-
-                .hero-live-video,
-                .video-wrapper video {
-                transform: translateZ(0);
-                will-change: transform;
-                }
-
-
-                            /* ============= ЖЕСТКИЙ ФИКС ДЛЯ TELEGRAM ============= */
-            @supports (-webkit-touch-callout: none) {
-            /* Отключаем плавный скролл ТОЛЬКО для мобил */
-            html {
-                scroll-behavior: auto !important;
-            }
-            
-            /* Убираем размытие на хедере в Telegram */
-            header {
-                -webkit-backdrop-filter: none !important;
-                backdrop-filter: none !important;
-                background: var(--secondary-color) !important;
-            }
-            
-            /* Замораживаем трансформации во время скролла */
             .hero-live-video,
             .video-wrapper video,
             .floating,
@@ -2803,18 +2771,12 @@
                 animation: none !important;
                 transform: none !important;
             }
-            
-            /* Оптимизация скролла */
-            body, html {
-                -webkit-overflow-scrolling: touch !important;
-                overflow-scrolling: touch !important;
-                height: 100%;
-            }
-            }
 
-
+            * {
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
     </style>
-</head>
 </head>
 <body class="prevent-scroll">
     <!-- Initial Loader для предотвращения автоскролла -->
@@ -3456,8 +3418,6 @@
             <div class="footer-content">
                 <div class="footer-hearts">♥ ♥ ♥</div>
                 <p class="footer-message">Ваше присутствие сделает наш день по-настоящему особенным и незабываемым.</p>
-                
-                
             </div>
         </div>
     </footer>
@@ -3474,39 +3434,6 @@
     </div>
 
     <script>
-
-
-
-        // ФИКС ДЛЯ TELEGRAM WEBVIEW
-        if (navigator.userAgent.toLowerCase().includes('tg')) {
-            // Отключаем нативное поведение WebView
-            document.body.style.overscrollBehavior = 'contain';
-            document.documentElement.style.overscrollBehavior = 'contain';
-            
-            // Создаем контейнер для скролла
-            const appContainer = document.createElement('div');
-            appContainer.id = 'telegram-scroll-container';
-            appContainer.style.height = '100vh';
-            appContainer.style.overflowY = 'auto';
-            appContainer.style.webkitOverflowScrolling = 'touch';
-            
-            // Переносим всё содержимое body в контейнер
-            while (document.body.firstChild) {
-                appContainer.appendChild(document.body.firstChild);
-            }
-            document.body.appendChild(appContainer);
-            
-            // Фикс для начального скролла
-            setTimeout(() => {
-                window.scrollTo(0, 1);
-                setTimeout(() => window.scrollTo(0, 0), 50);
-            }, 100);
-        }
-
-
-
-
-
         // ============= FIX INITIAL LOADER =============
         document.addEventListener('DOMContentLoaded', function() {
             const initialLoad = document.getElementById('initialLoad');
