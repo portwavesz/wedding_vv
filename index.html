@@ -879,12 +879,12 @@
         }
 
         .dresscode-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);  /* ← ЭТО СТРОКА */
+            gap: 10px;
+            justify-items: center;
+            align-items: start;
+    }
 
         .dresscode-item {
             padding: 10px;
@@ -2009,7 +2009,7 @@
             justify-content: space-between;
             align-items: center;
             font-weight: 500;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: var(--transition);
             font-family: 'Montserrat';
             color: var(--accent-color);
